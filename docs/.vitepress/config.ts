@@ -68,7 +68,7 @@ const teekConfig = defineTeekConfig({
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   extends: teekConfig,
-  title: "vitepress-theme-teek",
+  title: "Universal IoT",
   description: description,
   cleanUrls: false,
   lastUpdated: true,
@@ -150,57 +150,57 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "指南",
+        text: "平台介绍",
         link: "/guide/intro",
         activeMatch: "/01.指南/",
       },
-      { text: "配置", link: "/reference/config", activeMatch: "/10.配置/" },
-      { text: "开发", link: "/develop/intro", activeMatch: "/15.主题开发/" },
-      {
-        text: "资源",
-        items: [
-          { text: "案例", link: "/case" },
-          { text: "常见问题", link: "/theme/qa" },
-          { text: "拓展", link: "/expand/intro" },
-        ],
-      },
-      {
-        text: "生态",
-        items: [
-          { text: "Components 组件", link: "/ecosystem/components" },
-          { text: "运行时 API", link: "/reference/runtime-api" },
-          { text: "Helper 工具", link: "/ecosystem/helper" },
-          { text: "Hooks 函数", link: "/ecosystem/composables" },
-          { text: "Markdown 插件工具", link: "/ecosystem/md-plugin-utils" },
-        ],
-      },
-      {
-        text: "功能页",
-        items: [
-          { text: "归档页", link: "/archives" },
-          { text: "清单页", link: "/articleOverview" },
-          { text: "登录页", link: "/login" },
-          { text: "风险链接提示页", link: "/risk-link?target=https://vp.teek.top" },
-          { text: "分类页", link: "/categories" },
-          { text: "标签页", link: "/tags" },
-        ],
-      },
-      {
-        text: version,
-        items: [
-          { text: "历史版本", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/releases" },
-          { text: "更新日志", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/dev/CHANGELOG.md" },
-        ],
-      },
+      // { text: "配置", link: "/reference/config", activeMatch: "/10.配置/" },
+      // { text: "开发", link: "/develop/intro", activeMatch: "/15.主题开发/" },
+      // {
+      //   text: "资源",
+      //   items: [
+      //     { text: "案例", link: "/case" },
+      //     { text: "常见问题", link: "/theme/qa" },
+      //     { text: "拓展", link: "/expand/intro" },
+      //   ],
+      // },
+      // {
+      //   text: "生态",
+      //   items: [
+      //     { text: "Components 组件", link: "/ecosystem/components" },
+      //     { text: "运行时 API", link: "/reference/runtime-api" },
+      //     { text: "Helper 工具", link: "/ecosystem/helper" },
+      //     { text: "Hooks 函数", link: "/ecosystem/composables" },
+      //     { text: "Markdown 插件工具", link: "/ecosystem/md-plugin-utils" },
+      //   ],
+      // },
+      // {
+      //   text: "功能页",
+      //   items: [
+      //     { text: "归档页", link: "/archives" },
+      //     { text: "清单页", link: "/articleOverview" },
+      //     { text: "登录页", link: "/login" },
+      //     { text: "风险链接提示页", link: "/risk-link?target=https://vp.teek.top" },
+      //     { text: "分类页", link: "/categories" },
+      //     { text: "标签页", link: "/tags" },
+      //   ],
+      // },
+      // {
+      //   text: version,
+      //   items: [
+      //     { text: "历史版本", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/releases" },
+      //     { text: "更新日志", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/dev/CHANGELOG.md" },
+      //   ],
+      // },
     ],
-    socialLinks: [{ icon: "github", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek" }],
+    // socialLinks: [{ icon: "github", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek" }],
 
     search: {
       provider: "local",
     },
-    editLink: {
-      text: "在 GitHub 上编辑此页",
-      pattern: "https://github.com/Kele-Bingtang/vitepress-theme-teek/edit/master/docs/:path",
-    },
+    // editLink: {
+    //   text: "在 GitHub 上编辑此页",
+    //   pattern: "https://github.com/Kele-Bingtang/vitepress-theme-teek/edit/master/docs/:path",
+    // },
   },
 });

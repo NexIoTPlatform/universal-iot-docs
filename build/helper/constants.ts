@@ -1,4 +1,4 @@
 export const target = "es2020";
-export const pkgName = "teek";
-export const pkgCamelCaseName = "Teek";
-export const outputPkgName = "vitepress-theme-teek";
+export const pkgName = "UniversalIoT";
+export const pkgCamelCaseName = "UniversalIoT";
+export const outputPkgName = "Universal-IoT";
