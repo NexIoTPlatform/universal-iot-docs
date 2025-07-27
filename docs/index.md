@@ -7,7 +7,7 @@ tk:
 hero:
   name: Universal-IoT
   text:
-  tagline: ✨一个基于Java21实现的高度灵活、配置化、云调试器的物联网平台
+  tagline: ✨一款基于Java21实现的高度灵活、配置化、云调试器的物联网平台
   actions:
     - theme: brand
       text: 开始
@@ -30,19 +30,13 @@ features:
     title: 企业级 & 验证
     details: 适合中小企业想有自己的业务积累、10万设备级单机轻松应对
   - icon: 📝
-    title: 技术先进
-    details: JDK21 LTS长期支持版，SpringBoot 3.5单体架构，想拆想合，看你自己规模。
+    title: 架构合理
+    details: JDK21 LTS长期支持，SpringBoot 3.5单体架构，想拆微服务，看你自己规模。
 ---
 
 ## 💡 反馈交流
 
-在使用过程中有任何问题和想法，请给我提 [Issue](https://github.com/Kele-Bingtang/vitepress-theme-teek/issues)。 你也可以在 Issue 查看别人提的问题和解决方案。
-
-或者加入我们的交流群（添加我的微信并备注 <mark>进群</mark>）：
-
-<img src="https://gcore.jsdelivr.net/gh/Kele-Bingtang/static/index/20250412000919.png" alt="添加我微信备注「进群」" style="width: 180px;" />
-
-如果图片链接失效，可以在微信右上角 -> 添加朋友，然后搜索 `teekers` 来添加我的微信。
+<img src="/wx.png" style="width: 180px;" />
 
 <style>
 /* :root {
