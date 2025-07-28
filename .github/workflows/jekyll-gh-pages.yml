@@ -27,7 +27,9 @@ jobs:
           cache: 'pnpm'  # 启用PNPM缓存加速[2](@ref)
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile  # 锁定依赖版本[7](@ref)
+        run: |
+             pnpm install --force
+             pnpm rebuild  # 强制重建本地包链接
 
       - name: Build VitePress
         run: pnpm run docs:build
