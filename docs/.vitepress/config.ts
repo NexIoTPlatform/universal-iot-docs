@@ -70,7 +70,7 @@ export default defineConfig({
   extends: teekConfig,
   title: "Universal IoT",
   description: description,
-  base: "/universal-iot-docs/",
+  base: process.env.CF_PAGES ? "/" : "/universal-iot-docs/",
   cleanUrls: false,
   lastUpdated: true,
   lang: "zh-CN",
@@ -121,7 +121,9 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: "https://phoenixhai.github.io/universal-iot-docs",
+    hostname: process.env.CF_PAGES
+      ? process.env.CF_PAGES_URL || "https://universal-iot-docs.pages.dev"
+      : "https://phoenixhai.github.io/universal-iot-docs",
     transformItems: items => {
       const permalinkItemBak: typeof items = [];
       // 使用永久链接生成 sitemap
