@@ -70,6 +70,7 @@ export default defineConfig({
   extends: teekConfig,
   title: "Universal IoT",
   description: description,
+  base: "/universal-iot-docs/",
   cleanUrls: false,
   lastUpdated: true,
   lang: "zh-CN",
@@ -120,7 +121,7 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: "https://vp.teek.top",
+    hostname: "https://phoenixhai.github.io/universal-iot-docs",
     transformItems: items => {
       const permalinkItemBak: typeof items = [];
       // 使用永久链接生成 sitemap

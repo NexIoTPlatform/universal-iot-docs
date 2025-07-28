@@ -22,6 +22,7 @@
     "lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "prepare": "husky",
+    "setup:github-pages": "bash scripts/setup-github-pages.sh",
     "cs": "pnpm changeset",
     "cs:version": "pnpm changeset version",
     "cs:release": "pnpm run plugins:build && changeset publish",
