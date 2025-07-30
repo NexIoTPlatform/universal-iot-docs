@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
+    "build:nginx": "node scripts/build-nginx.js",
     "preview": "vitepress preview",
     "baiduPush": "tsx .scripts/baiduPush.ts https://vp.teek.top && bash .scripts/baiduPush.sh"
   },

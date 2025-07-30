@@ -10,6 +10,7 @@
     "clean": "rimraf dist",
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
+    "docs:nginx": "pnpm run -C docs build:nginx",
     "docs:preview": "pnpm run -C docs preview",
     "docs:baiduPush": "pnpm run -C docs baiduPush",
     "to:build": "pnpm run -C build",
