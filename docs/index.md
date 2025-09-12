@@ -6,7 +6,7 @@ tk:
 
 hero:
   name: TeamBee
-  text: 
+  text: 奈科斯(nexiot)
   tagline: ✨ 基于Java"零代码侵入"的企业级物联网平台，支持多协议直连、云调试、配置化
   actions:
     - theme: alt
