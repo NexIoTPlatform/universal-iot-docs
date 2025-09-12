@@ -6,8 +6,8 @@ tk:
 
 hero:
   name: TeamBee
-  text: Universal-IoT
-  tagline: ✨ 基于Java21的企业级物联网平台，支持多协议直连、云调试、配置化！
+  text: 
+  tagline: ✨ 基于Java"零代码侵入"的企业级物联网平台，支持多协议直连、云调试、配置化
   actions:
     - theme: alt
       text: 快速开始
@@ -24,7 +24,7 @@ hero:
 
 features:
   - icon: 🔌
-    title: 多协议直连接入
+    title: 零代码侵入多协议接入
     details: 支持TCP直连、MQTT直连、天翼物联(AIoT)、HTTP REST、等多种设备接入方式，满足不同场景需求
   - icon: 🛠️
     title: 云调试开发环境
