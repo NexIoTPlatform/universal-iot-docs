@@ -14,11 +14,11 @@ const description = [
 ].toString();
 
 const teekConfig = defineTeekConfig({
-  author: { name: "Alex-IoT", link: "https://github.com/Kele-Bingtang" },
+  author: { name: "nexiot", link: "https://github.com/Kele-Bingtang" },
   blogger: {
     avatar: "/avator.png",
     shape: "circle-rotate",
-    name: "Alex-IoT",
+    name: "nexiot",
     slogan: "兴趣，坚持，热爱，专注",
     circleBgImg: "/blog/bg4.webp",
     color: "#ffffff",
@@ -34,6 +34,8 @@ const teekConfig = defineTeekConfig({
   },
   codeBlock: {
     copiedDone: TkMessage => TkMessage.success("复制成功！"),
+    collapseHeight: false, // 禁用代码块自动折叠
+    disabled: false, // 禁用代码块
   },
   post: {
     showCapture: true,
@@ -169,44 +171,38 @@ export default defineConfig({
         link: "/guide/intro",
         activeMatch: "/01.平台介绍/",
       },
-      { text: "设备接入", link: "/iot/tcp/prepare", activeMatch: "/02.设备接入/" },
-      // { text: "开发", link: "/develop/intro", activeMatch: "/15.主题开发/" },
-      // {
-      //   text: "资源",
-      //   items: [
-      //     { text: "案例", link: "/case" },
-      //     { text: "常见问题", link: "/theme/qa" },
-      //     { text: "拓展", link: "/expand/intro" },
-      //   ],
-      // },
-      // {
-      //   text: "生态",
-      //   items: [
-      //     { text: "Components 组件", link: "/ecosystem/components" },
-      //     { text: "运行时 API", link: "/reference/runtime-api" },
-      //     { text: "Helper 工具", link: "/ecosystem/helper" },
-      //     { text: "Hooks 函数", link: "/ecosystem/composables" },
-      //     { text: "Markdown 插件工具", link: "/ecosystem/md-plugin-utils" },
-      //   ],
-      // },
-      // {
-      //   text: "功能页",
-      //   items: [
-      //     { text: "归档页", link: "/archives" },
-      //     { text: "清单页", link: "/articleOverview" },
-      //     { text: "登录页", link: "/login" },
-      //     { text: "风险链接提示页", link: "/risk-link?target=https://vp.teek.top" },
-      //     { text: "分类页", link: "/categories" },
-      //     { text: "标签页", link: "/tags" },
-      //   ],
-      // },
-      // {
-      //   text: version,
-      //   items: [
-      //     { text: "历史版本", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/releases" },
-      //     { text: "更新日志", link: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/dev/CHANGELOG.md" },
-      //   ],
-      // },
+      { 
+        text: "设备接入", 
+        activeMatch: "/02.设备接入/",
+        items: [
+          { text: "TCP设备接入", link: "/iot/tcp/prepare" },
+          { text: "MQTT设备接入", link: "/iot/mqtt/important-notice" },
+          { text: "天翼物联接入", link: "/iot/aiot/create-product" },
+          { text: "HTTP设备接入", link: "/iot/http/api-specification" },
+          { text: "移动OneNET接入", link: "/iot/onenet/overview" },
+          { text: "云云对接接入", link: "/iot/cloud-cloud/overview" },
+        ]
+      },
+      {
+        text: "快速开始",
+        link: "/iot/install",
+        activeMatch: "/03.快速开始/",
+      },
+      {
+        text: "演示地址",
+        items: [
+          { 
+            text: "平台演示", 
+            link: "http://iot.192886.xyz:81/",
+            target: "_blank"
+          },
+          { 
+            text: "调试IDE", 
+            link: "http://iot.192886.xyz:81/magic/debug/index.html",
+            target: "_blank"
+          }
+        ]
+      },
     ],
     socialLinks: [
       {
