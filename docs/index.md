@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: alt
       text: 快速开始
-      link: /iot/install
+      link: /quick-start-guide
     - theme: brand
       text: 平台介绍
       link: /guide/intro

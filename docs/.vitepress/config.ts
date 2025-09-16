@@ -184,9 +184,13 @@ export default defineConfig({
         ]
       },
       {
-        text: "快速开始",
-        link: "/iot/install",
-        activeMatch: "/03.快速开始/",
+        text: "视频教程",
+        items: [
+          { text: "总览", link: "/tutorials" },
+          { text: "天翼物联实战", link: "/iot/aiot/create-product" },
+          { text: "MQTT直连接入", link: "/iot/mqtt/important-notice" },
+          { text: "TCP直连接入", link: "/iot/tcp/prepare" }
+        ]
       },
       {
         text: "产品动态",
