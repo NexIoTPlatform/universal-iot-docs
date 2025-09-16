@@ -1,0 +1,376 @@
+---
+title: 安装部署问题
+date: 2025-01-15 10:00:00
+permalink: /support/faq/installation
+categories:
+  - 帮助支持
+tags:
+  - 常见问题
+  - 安装部署
+---
+
+# 安装部署常见问题
+
+## 🚀 快速安装问题
+
+### Q1: 系统要求是什么？
+
+**A:** NexIoT平台的最低系统要求如下：
+
+#### 硬件要求
+- **CPU**: 4核心以上（推荐8核心）
+- **内存**: 8GB以上（推荐16GB）
+- **磁盘**: 100GB以上可用空间
+- **网络**: 稳定的网络连接
+
+#### 软件要求
+- **操作系统**: Linux（CentOS 7+、Ubuntu 18+）、Windows 10+
+- **Java**: JDK 21+
+- **数据库**: MySQL 5.7+ 或 MySQL 8.0+
+- **缓存**: Redis 6.0+
+- **容器**: Docker 20.0+（可选）
+
+### Q2: 如何快速安装NexIoT？
+
+**A:** 推荐使用Docker Compose一键安装：
+
+```bash
+# 1. 下载安装脚本
+curl -O https://nexiot.com/install.sh
+chmod +x install.sh
+
+# 2. 执行安装
+./install.sh
+
+# 3. 启动服务
+docker-compose up -d
+
+# 4. 访问系统
+# 浏览器打开: http://localhost:8080
+# 默认账号: admin / admin123
+```
+
+### Q3: 安装过程中出现端口冲突怎么办？
+
+**A:** 常见的端口冲突及解决方案：
+
+| 端口 | 服务 | 冲突解决方案 |
+|------|------|-------------|
+| 8080 | Web服务 | 修改application.yml中的server.port |
+| 3306 | MySQL | 修改MySQL配置或使用其他端口 |
+| 6379 | Redis | 修改Redis配置或使用其他端口 |
+| 1883 | MQTT | 修改MQTT配置或使用其他端口 |
+
+```yaml
+# 修改端口配置示例
+server:
+  port: 8081  # 修改Web服务端口
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/nexiot  # 修改MySQL端口
+```
+
+## 🐛 部署问题
+
+### Q4: 服务启动失败怎么办？
+
+**A:** 按以下步骤排查：
+
+#### 1. 检查日志
+```bash
+# 查看应用日志
+tail -f logs/nexiot.log
+
+# 查看Docker日志
+docker-compose logs -f nexiot
+```
+
+#### 2. 检查依赖服务
+```bash
+# 检查MySQL状态
+systemctl status mysql
+# 或
+docker-compose ps mysql
+
+# 检查Redis状态
+systemctl status redis
+# 或
+docker-compose ps redis
+```
+
+#### 3. 检查端口占用
+```bash
+# 检查端口占用情况
+netstat -tlnp | grep :8080
+lsof -i :8080
+```
+
+#### 4. 检查配置文件
+```bash
+# 验证配置文件语法
+java -jar nexiot.jar --spring.config.location=application.yml --dry-run
+```
+
+### Q5: 数据库连接失败怎么办？
+
+**A:** 数据库连接问题排查步骤：
+
+#### 1. 检查数据库服务
+```bash
+# 检查MySQL服务状态
+systemctl status mysql
+
+# 检查MySQL端口
+netstat -tlnp | grep :3306
+```
+
+#### 2. 检查数据库配置
+```yaml
+# application.yml配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/nexiot?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: nexiot
+    password: your_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+```
+
+#### 3. 测试数据库连接
+```bash
+# 使用MySQL客户端测试连接
+mysql -h localhost -P 3306 -u nexiot -p
+
+# 检查数据库是否存在
+SHOW DATABASES;
+```
+
+#### 4. 创建数据库和用户
+```sql
+-- 创建数据库
+CREATE DATABASE nexiot CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- 创建用户
+CREATE USER 'nexiot'@'%' IDENTIFIED BY 'your_password';
+
+-- 授权
+GRANT ALL PRIVILEGES ON nexiot.* TO 'nexiot'@'%';
+FLUSH PRIVILEGES;
+```
+
+### Q6: Redis连接失败怎么办？
+
+**A:** Redis连接问题排查：
+
+#### 1. 检查Redis服务
+```bash
+# 检查Redis服务状态
+systemctl status redis
+
+# 检查Redis端口
+netstat -tlnp | grep :6379
+```
+
+#### 2. 测试Redis连接
+```bash
+# 使用Redis客户端测试
+redis-cli ping
+# 应该返回 PONG
+```
+
+#### 3. 检查Redis配置
+```yaml
+# application.yml配置
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: your_password  # 如果设置了密码
+    database: 0
+    timeout: 5000
+```
+
+## 🔧 配置问题
+
+### Q7: 如何修改系统配置？
+
+**A:** 主要配置文件说明：
+
+#### 1. 应用配置（application.yml）
+```yaml
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# 数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/nexiot
+    username: nexiot
+    password: your_password
+
+# Redis配置
+  redis:
+    host: localhost
+    port: 6379
+
+# 日志配置
+logging:
+  level:
+    com.nexiot: INFO
+  file:
+    name: logs/nexiot.log
+```
+
+#### 2. 设备协议配置
+```yaml
+# TCP协议配置
+tcp:
+  enabled: true
+  port: 8080
+  max-connections: 1000
+
+# MQTT协议配置
+mqtt:
+  enabled: true
+  broker-url: tcp://localhost:1883
+  username: mqtt_user
+  password: mqtt_password
+```
+
+### Q8: 如何配置HTTPS？
+
+**A:** HTTPS配置步骤：
+
+#### 1. 生成SSL证书
+```bash
+# 使用Let's Encrypt（推荐）
+certbot certonly --standalone -d your-domain.com
+
+# 或使用自签名证书
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
+
+#### 2. 配置HTTPS
+```yaml
+# application.yml配置
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: /path/to/keystore.p12
+    key-store-password: your_password
+    key-store-type: PKCS12
+```
+
+#### 3. 配置反向代理（推荐）
+```nginx
+# Nginx配置
+server {
+    listen 443 ssl;
+    server_name your-domain.com;
+    
+    ssl_certificate /path/to/cert.pem;
+    ssl_certificate_key /path/to/key.pem;
+    
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+## 📊 性能问题
+
+### Q9: 系统性能如何优化？
+
+**A:** 性能优化建议：
+
+#### 1. JVM参数优化
+```bash
+# 启动参数
+java -Xms2g -Xmx4g -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -jar nexiot.jar
+```
+
+#### 2. 数据库优化
+```sql
+-- MySQL配置优化
+[mysqld]
+innodb_buffer_pool_size = 2G
+innodb_log_file_size = 256M
+max_connections = 1000
+query_cache_size = 64M
+```
+
+#### 3. Redis优化
+```conf
+# Redis配置优化
+maxmemory 2gb
+maxmemory-policy allkeys-lru
+save 900 1
+save 300 10
+```
+
+### Q10: 如何监控系统性能？
+
+**A:** 系统监控方案：
+
+#### 1. 内置监控
+- 访问 `/actuator/health` 查看健康状态
+- 访问 `/actuator/metrics` 查看性能指标
+- 访问 `/actuator/info` 查看系统信息
+
+#### 2. 外部监控
+```yaml
+# Prometheus配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+```
+
+## 🆘 获取帮助
+
+### 技术支持渠道
+
+- **📧 邮箱支持**: support@nexiot.com
+- **💬 QQ群**: 123456789
+- **📱 微信群**: 扫描二维码加入
+- **📖 文档中心**: https://docs.nexiot.com
+- **🐛 问题反馈**: https://github.com/nexiot/issues
+
+### 问题反馈模板
+
+```markdown
+**问题描述**:
+简要描述遇到的问题
+
+**环境信息**:
+- 操作系统: 
+- Java版本: 
+- NexIoT版本: 
+- 数据库版本: 
+
+**错误日志**:
+粘贴相关的错误日志
+
+**复现步骤**:
+1. 
+2. 
+3. 
+
+**期望结果**:
+描述期望的正确行为
+```
+
+---
+
+*最后更新时间：2025-01-15*

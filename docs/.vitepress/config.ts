@@ -189,6 +189,31 @@ export default defineConfig({
         activeMatch: "/03.快速开始/",
       },
       {
+        text: "产品动态",
+        items: [
+          { 
+            text: "系统更新日志", 
+            link: "/04.系统更新日志/01.版本历史/01.最新版本",
+            activeMatch: "/04.系统更新日志/"
+          },
+          { 
+            text: "发展路线图", 
+            link: "/05.发展路线图/01.产品愿景/01.产品定位",
+            activeMatch: "/05.发展路线图/"
+          },
+          { 
+            text: "案例分享", 
+            link: "/06.案例分享/01.成功案例/01.企业级部署",
+            activeMatch: "/06.案例分享/"
+          },
+          { 
+            text: "帮助支持", 
+            link: "/07.帮助支持/01.常见问题/01.安装部署问题",
+            activeMatch: "/07.帮助支持/"
+          }
+        ]
+      },
+      {
         text: "演示地址",
         items: [
           { 
