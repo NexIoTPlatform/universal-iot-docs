@@ -1,0 +1,11 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("home-info-gap", getCssVar("gap1"));
+}
+
+@include b(home-card-list) {
+  gap: getCssVar(home-info-gap);
+}

@@ -1,0 +1,95 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(my) {
+  position: relative;
+  @include when(circle-bg) {
+    background-color: transparent;
+  }
+
+  @include e(avatar) {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &.circle-rotate img {
+      transition: transform 0.6s ease;
+      &:hover {
+        transform: rotate(360deg) scale(1.1);
+      }
+    }
+
+    &.circle-rotate-last img {
+      &:hover {
+        transform: rotate(666turn);
+        transition-duration: 59s;
+        transition-timing-function: cubic-bezier(0.34, 0, 0.84, 1);
+      }
+    }
+
+    &.square {
+      width: getCssVar("home-card-width");
+      margin: calc(-1 * getCssVar("home-card-padding")) calc(-1 * getCssVar("home-card-padding")) 10px;
+    }
+
+    @media (max-width: 768px) {
+      &.square > span {
+        img {
+          width: 240px;
+        }
+      }
+    }
+  }
+
+  @include e(avatar__circle--bg) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    z-index: -1;
+
+    @include when(mask) {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        opacity: 0.5;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, getCssVar("bg-color-elm") 100%);
+      }
+    }
+  }
+
+  @include e(icons) {
+    margin-bottom: 5px;
+  }
+
+  @include e(blogger) {
+    padding: 5px 5px 0;
+    text-align: left;
+
+    .name {
+      font-size: 21px;
+      display: block;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .slogan {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}

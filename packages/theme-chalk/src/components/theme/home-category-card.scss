@@ -1,0 +1,52 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(category) {
+  @include when(page) {
+    position: sticky;
+    top: 72px;
+    max-height: calc(100vh - 160px);
+    min-height: 67px;
+    overflow-y: auto;
+  }
+
+  @include e(list) {
+    position: relative;
+    margin-top: 5px;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 2px 5px;
+      font-size: getCssVar("home-font-size-middle");
+      transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s,
+        opacity 0.5s ease,
+        transform 0.5s ease;
+      border-left: 2px solid transparent;
+      margin-top: -1px;
+
+      &:hover {
+        background-color: getCssVar("fill-color-light");
+        border-color: getCssVar("theme-color");
+      }
+
+      &.active {
+        background: getCssVar("theme-color");
+        color: getCssVar("bg-color");
+        padding-left: 13px;
+        border-radius: 1px;
+        border-color: transparent;
+      }
+    }
+  }
+
+  @include m(empty) {
+    font-size: getCssVar("home-font-size-middle");
+    padding: 6px;
+    text-align: center;
+  }
+}

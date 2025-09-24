@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@teek/theme-chalk",
+  "license": "MIT",
+  "main": "index.css",
+  "exports": {
+    "./*": "./src/*",
+    "./src/*": "./src/*"
+  },
+  "devDependencies": {
+    "sass": "catalog:"
+  }
+}

@@ -1,0 +1,87 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "sass:string";
+
+@include b(title-tag) {
+  display: inline-block;
+  height: 22px;
+  line-height: 18px;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 1px solid getCssVar("theme-color");
+  color: getCssVar("theme-color");
+
+  @include m(vp-primary) {
+    border: 1px solid var(--vp-c-indigo-1);
+    color: var(--vp-c-indigo-1);
+  }
+
+  @include m(vp-info) {
+    border: 1px solid var(--vp-c-gray-1);
+    color: var(--vp-c-gray-1);
+  }
+
+  @include m(vp-success) {
+    border: 1px solid var(--vp-c-green-1);
+    color: var(--vp-c-green-1);
+  }
+
+  @include m(vp-warning) {
+    border: 1px solid var(--vp-c-yellow-1);
+    color: var(--vp-c-yellow-1);
+  }
+
+  @include m(vp-danger) {
+    border: 1px solid var(--vp-c-red-1);
+    color: var(--vp-c-red-1);
+  }
+
+  @include m(vp-important) {
+    border: 1px solid var(--vp-c-purple-1);
+    color: var(--vp-c-purple-1);
+  }
+
+  @each $epType in (ep-primary, ep-info, ep-success, ep-warning, ep-danger) {
+    @include m($epType) {
+      $type: string.slice($epType, 4);
+
+      border: 1px solid getCssVar("el-color", $type);
+      color: getCssVar("el-color", $type);
+    }
+  }
+
+  @include m(right) {
+    margin-left: 4px;
+  }
+
+  @include m(left) {
+    margin-right: 4px;
+  }
+
+  @include m(large) {
+    font-size: 16px;
+    height: 24px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+
+  @include m(small) {
+    font-size: 13px;
+    height: 19px;
+    line-height: 15px;
+  }
+
+  @include m(mini) {
+    font-size: 12px;
+    height: 18px;
+    line-height: 14px;
+  }
+}
+
+h1 {
+  @include b(title-tag) {
+    transform: translateY(-4px);
+  }
+}

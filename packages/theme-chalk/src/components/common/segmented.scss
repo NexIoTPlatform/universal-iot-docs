@@ -1,0 +1,23 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("segmented-padding", 4px);
+  @include set-css-var("segmented-gap", 8px);
+  @include set-css-var("segmented-line-height", 20px);
+  @include set-css-var("segmented-border-radius", 6px);
+}
+
+@include b(segmented) {
+  line-height: getCssVar("segmented-line-height");
+  padding: getCssVar("segmented-padding");
+  border-radius: getCssVar("segmented-border-radius");
+  border-style: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: getCssVar("segmented-gap");
+}

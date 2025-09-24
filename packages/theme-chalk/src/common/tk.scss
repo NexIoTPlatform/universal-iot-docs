@@ -1,0 +1,28 @@
+@use "../mixins/config" as *;
+@use "../mixins/function" as *;
+
+.#{$namespace}-pointer {
+  cursor: pointer;
+}
+
+.#{$namespace}-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Badge 添加 success 样式 */
+.VPBadge.success {
+  border-color: getCssVar("el-color-success-light-8");
+  color: getCssVar("el-color-success");
+  background-color: getCssVar("el-color-success-light-9");
+}
+
+.hover-color {
+  transition: color 0.2s;
+  &:hover {
+    color: getCssVar("theme-color");
+    cursor: pointer;
+  }
+}

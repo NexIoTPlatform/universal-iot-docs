@@ -1,0 +1,29 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("popover-color", var(--vp-c-text-1));
+  @include set-css-var("popover-bg-color", getCssVar("bg-color-elm"));
+  @include set-css-var("popover-padding", 10px);
+  @include set-css-var("popover-font-size", 14px);
+  @include set-css-var("popover-shadow", var(--vp-shadow-3));
+  @include set-css-var("popover-border-color", var(--vp-c-divider));
+  @include set-css-var("popover-border-radius", 4px);
+}
+
+@include b(popover) {
+  max-width: 100vw;
+  position: absolute;
+  color: getCssVar("popover-color");
+  background-color: getCssVar("popover-bg-color");
+  padding: getCssVar("popover-padding");
+  box-shadow: getCssVar("popover-shadow");
+  border: 1px solid getCssVar("popover-border-color");
+  border-radius: getCssVar("popover-border-radius");
+  font-size: getCssVar("popover-font-size");
+  overflow: auto;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  outline: none;
+}

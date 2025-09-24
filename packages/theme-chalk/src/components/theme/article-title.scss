@@ -1,0 +1,12 @@
+@use "../../mixins/bem" as *;
+
+@include b(article-title) {
+  .VPBadge {
+    &.left {
+      margin-right: 5px;
+    }
+    &.right {
+      margin-left: 5px;
+    }
+  }
+}

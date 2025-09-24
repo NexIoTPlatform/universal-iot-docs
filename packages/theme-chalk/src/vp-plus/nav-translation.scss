@@ -1,0 +1,8 @@
+@use "../mixins/function" as *;
+
+/* 国际化下拉中，激活的语言颜色修改 */
+.VPNav .VPNavBarTranslations .VPMenu {
+  .title {
+    color: getCssVar("theme-color");
+  }
+}

@@ -1,0 +1,28 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/config" as *;
+
+:root {
+  @include set-css-var("spotlight-under-bg-color", var(--vp-c-brand-soft));
+}
+
+.#{$namespace}-spotlight-hover {
+  pointer-events: none;
+  position: fixed;
+}
+
+.#{$namespace}-spotlight-hover__aside::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--vp-c-brand);
+  left: -24px;
+}
+
+.#{$namespace}-spotlight-hover__under {
+  background-color: getCssVar("spotlight-under-bg-color");
+}

@@ -1,0 +1,28 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(my-screen) {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+
+  @include e(avatar) {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  @include e(blogger) {
+    flex: 1;
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .slogan {
+      font-size: 15px;
+    }
+  }
+}

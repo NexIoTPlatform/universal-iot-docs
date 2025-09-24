@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>页面未找到</title>
+    <script type="text/javascript">
+      // VitePress SPA redirect for GitHub Pages
+      // This script handles client-side routing for VitePress on GitHub Pages
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      
+      // Redirect to the main app with the path as a query parameter
+      window.location.replace(redirectUrl);
+    </script>
+  </head>
+  <body>
+    <p>正在重定向...</p>
+  </body>
+</html> 

@@ -1,0 +1,70 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(risk-link) {
+  top: 40%;
+  min-width: 450px;
+  max-width: 620px;
+  background-color: getCssVar("bg-color-elm");
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: getCssVar("card-shadow");
+
+  @media (max-width: 640px) {
+    min-width: calc(100% - 40px);
+  }
+
+  @include e(header) {
+    flex-wrap: wrap;
+    gap: 15px;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  @include e(title) {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  @include e(link) {
+    font-size: 16px;
+    color: var(--vp-c-text-3);
+  }
+
+  button {
+    color: #ffffff;
+    background-color: getCssVar("theme-color");
+    font-size: 14px;
+    height: 32px;
+    padding: 4px 15px;
+    border-radius: 6px;
+    outline: none;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    line-height: 1.5;
+
+    &:hover {
+      background-color: var(--vp-c-brand-3);
+    }
+
+    &.btn {
+      float: right;
+    }
+  }
+
+  & ~ div {
+    display: none;
+  }
+}

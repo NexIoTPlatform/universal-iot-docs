@@ -1,0 +1,97 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/config" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("body-bg-img-nav-color", rgb(255, 255, 255, 0.9));
+  @include set-css-var("body-bg-img-sidebar-color", rgb(255, 255, 255, 0.8));
+}
+
+:root.dark {
+  @include set-css-var("body-bg-img-nav-color", rgb(27, 27, 31, 0.9));
+  @include set-css-var("body-bg-img-sidebar-color", rgb(27, 27, 31, 0.8));
+}
+
+@include b(body-bg-image) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999999;
+  height: 100vh;
+  width: 100vw;
+  transition: background-image 1 s;
+  background: getCssVar("body-bg-img");
+  opacity: getCssVar("body-bg-img-opacity");
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    background-color: getCssVar("body-mask-bg-color");
+  }
+
+  & ~ .#{$namespace}-layout.Layout {
+    .VPContent:not(.is-home) {
+      background-color: getCssVar("bg-color");
+    }
+    @media (min-width: 1280px) {
+      header.VPNav .VPNavBar:not(.full-img-nav-bar) {
+        &.home {
+          background-color: getCssVar("body-bg-img-nav-color");
+        }
+        &:not(.home) {
+          background-color: getCssVar("body-bg-img-nav-color");
+        }
+      }
+    }
+
+    /* 兼容 ArticlePageStyle 组件 */
+    &.#{$namespace}-card,
+    &.#{$namespace}-card-nav,
+    &.#{$namespace}-segment,
+    &.#{$namespace}-segment-nav {
+      @media (min-width: 1280px) {
+        .VPNav .VPNavBar:not(.home) {
+          .content-body {
+            background-color: transparent;
+          }
+        }
+        .VPSidebar {
+          background-color: getCssVar("body-bg-img-sidebar-color");
+          .curtain {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .VPContent.is-home {
+      .vp-doc {
+        > div {
+          padding: 0 32px 1px;
+          width: calc((getCssVar(home-max-width)) - getCssVar("home-card-width"));
+          background-color: getCssVar("bg-color");
+        }
+      }
+    }
+    .VPNavBar.home .divider {
+      display: none;
+    }
+  }
+}
+
+html[layout-mode="original"] {
+  @include b(body-bg-image) {
+    & ~ .#{$namespace}-layout.Layout {
+      /* 兼容 ArticlePageStyle 组件 */
+      &.#{$namespace}-card,
+      &.#{$namespace}-card-nav,
+      &.#{$namespace}-segment,
+      &.#{$namespace}-segment-nav {
+        .VPContent:not(.is-home) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

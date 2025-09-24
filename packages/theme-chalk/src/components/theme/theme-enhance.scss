@@ -1,0 +1,197 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+@use "../../mixins/config" as *;
+
+:root {
+  @include set-css-var("theme-enhance-text-color", var(--vp-c-text-1));
+  @include set-css-var("theme-enhance-inner-bg-color", getCssVar("fill-color-dark"));
+}
+
+@include b(segmented) {
+  color: getCssVar("theme-enhance-text-color");
+  background-color: getCssVar("theme-enhance-inner-bg-color");
+}
+
+@include b(theme-enhance) {
+  height: 100%;
+  @include when(top) {
+    &::before {
+      margin-right: 16px;
+      margin-left: 16px;
+      width: 1px;
+      height: 24px;
+      background-color: var(--vp-c-divider);
+      content: "";
+    }
+
+    .tk-icon {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+
+  @include e(popover) {
+    width: 340px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  @include e(content) {
+    & > * {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include e(theme-color) {
+    .label {
+      margin-right: 10px;
+    }
+    h3 {
+      display: inline-block;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    .#{$namespace}-segmented {
+      &-item.is-active {
+        color: var(--vp-c-brand-1);
+        background-color: var(--vp-c-brand-soft);
+
+        &:hover {
+          color: var(--vp-c-brand-3);
+          background-color: var(--vp-c-brand-soft);
+        }
+      }
+      &-item {
+        min-width: 66px;
+        max-width: 66px;
+      }
+    }
+  }
+
+  @include e(title) {
+    display: inline-flex;
+    align-items: center;
+    flex: 1 1 0%;
+    font-size: 14px;
+    font-weight: 500;
+    color: getCssVar("theme-enhance-text-color");
+    padding-right: 16px;
+    user-select: none;
+    gap: 4px;
+
+    @include when(disabled) {
+      opacity: 0.5;
+    }
+  }
+
+  @include e(helper) {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.5;
+    color: getCssVar("theme-enhance-text-color");
+    cursor: help;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include m(title) {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    @include m(desc) {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 8px;
+    }
+  }
+
+  @include e(helper__popup) {
+    color: getCssVar("theme-enhance-text-color");
+  }
+
+  @include e(helper__body) {
+    max-width: 400px;
+  }
+
+  @include e(helper__body__tip) {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: getCssVar("theme-enhance-inner-bg-color");
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include e(slide) {
+    color: getCssVar("theme-enhance-text-color");
+    background-color: getCssVar("theme-enhance-inner-bg-color");
+  }
+
+  @include e(switch) {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    min-width: 40px;
+    height: 20px;
+    border: 1px solid #dcdfe6;
+    outline: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: #dcdfe6;
+    cursor: pointer;
+    transition:
+      border-color 0.3s,
+      background-color 0.3s;
+
+    .action {
+      position: absolute;
+      left: 1px;
+      border-radius: 100%;
+      transition: all 0.3s;
+      width: 16px;
+      height: 16px;
+      background-color: var(--vp-c-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #dcdfe6;
+    }
+
+    @include when(checked) {
+      border-color: var(--vp-c-brand-1);
+      background-color: var(--vp-c-brand-1);
+
+      .action {
+        left: calc(100% - 17px);
+        color: var(--vp-c-brand-1);
+      }
+    }
+  }
+
+  /* 滑动消失出现效果 */
+  .#{$namespace}-theme-enhance-slide-move,
+  .#{$namespace}-theme-enhance-slide-enter-active,
+  .#{$namespace}-theme-enhance-slide-leave-active {
+    transition: all 0.2s ease-in-out;
+  }
+  .#{$namespace}-theme-enhance-slide-enter-from {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  .#{$namespace}-theme-enhance-slide-leave-to {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "vitepress-theme-teek-docs",
+  "version": "1.0.0",
+  "description": "vitepress-theme-teek 使用文档",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "build:nginx": "node scripts/build-nginx.js",
+    "preview": "vitepress preview",
+    "baiduPush": "tsx .scripts/baiduPush.ts https://vp.teek.top && bash .scripts/baiduPush.sh"
+  },
+  "devDependencies": {
+    "echarts": "^5.6.0",
+    "gray-matter": "^4.0.3",
+    "tinyglobby": "^0.2.10",
+    "tsx": "^4.19.3",
+    "vitepress": "^1.6.3",
+    "vitepress-theme-teek": "workspace:*"
+  }
+}

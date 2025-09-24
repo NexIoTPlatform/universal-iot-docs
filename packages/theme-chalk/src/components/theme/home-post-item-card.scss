@@ -1,0 +1,64 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/config" as *;
+
+@include b(post-item-card) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: getCssVar("card-shadow");
+  background-color: getCssVar("bg-color-elm");
+  transition: box-shadow 0.4s;
+  position: relative;
+  height: 100%;
+  &:hover {
+    box-shadow: var(--tk-hover-shadow);
+  }
+
+  .top {
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    color: var(#{getCssVarName("top-color")}, var(#{getCssVarName("theme-color")}));
+    opacity: 0.8;
+    z-index: 9;
+  }
+
+  @include e(cover-img) {
+    overflow: hidden;
+
+    .cover-img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s linear;
+      object-fit: cover;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
+    }
+  }
+
+  @include e(info) {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .excerpt {
+      color: getCssVar("text-color-secondary");
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .#{$namespace}-article-info__item:not(.split):not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

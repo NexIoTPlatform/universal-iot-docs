@@ -1,0 +1,9 @@
+/* 调窄左侧侧边栏，增大文档可视宽度 */
+:root {
+  --vp-sidebar-width: 220px;
+}
+
+@media (min-width: 1440px) {
+  :root { --vp-sidebar-width: 240px; }
+}
+

@@ -1,0 +1,66 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/config" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("home-banner-feature-row-gap", getCssVar("gap2"));
+}
+
+@include b(banner-feature) {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  overflow: hidden;
+  padding: 32px 0;
+  position: relative;
+  row-gap: getCssVar("home-banner-feature-row-gap");
+
+  @include e(feature__item) {
+    width: 30%;
+    text-align: center;
+    color: getCssVar("banner-text-color");
+
+    .feature-img {
+      width: 160px;
+      height: 160px;
+      animation: heart 1.2s ease-in-out 0s infinite alternate;
+      animation-play-state: paused;
+
+      &:hover {
+        animation-play-state: running;
+      }
+    }
+
+    .feature-title {
+      font-weight: 500;
+      font-size: 21px;
+      margin-top: 16px;
+    }
+
+    .feature-description {
+      opacity: 0.8;
+      margin: 16px;
+    }
+
+    &.#{$namespace}-slide-next-enter-from {
+      transform: translateX(100%) !important;
+      opacity: 0 !important;
+    }
+  }
+
+  @media (max-width: 719px) {
+    @include e(feature__item) {
+      width: 100%;
+    }
+  }
+
+  @keyframes heart {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(0, 8px);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@use "./catalogue-item";
+
+@include b(catalogue) {
+  @include e(header) {
+    border-bottom: 1px solid getCssVar("line-color");
+    margin-top: 16px;
+    padding-bottom: 19px;
+
+    .description {
+      margin-top: 10px;
+    }
+  }
+
+  @include e(wrapper) {
+    .title {
+      font-size: 23px;
+      margin: 32px 0 16px;
+    }
+
+    .post {
+      display: inline-block;
+      width: 50%;
+      margin-bottom: 16px;
+    }
+  }
+}

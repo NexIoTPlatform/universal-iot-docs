@@ -1,0 +1,155 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/config" as *;
+
+@include b(article-page) {
+  margin: 25px auto;
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    width: getCssVar("page-width");
+  }
+  @media (max-width: 1280px) {
+    padding: 0 10px;
+  }
+
+  @include when(aside) {
+    display: flex;
+
+    @media (min-width: 1280px) {
+      width: calc(getCssVar("page-width") + 360px);
+
+      .#{$namespace}-doc {
+        transform: translateX(80px);
+      }
+    }
+  }
+
+  .#{$namespace}-doc {
+    padding: 20px 30px;
+    box-shadow: var(--vp-shadow-3);
+    border-radius: 10px;
+    background-color: getCssVar("bg-color");
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  @include e(aside) {
+    position: relative;
+    display: none;
+    order: 2;
+    flex-grow: 1;
+    max-width: 256px;
+    padding-left: 112px;
+
+    @media (min-width: 1280px) {
+      display: block;
+    }
+  }
+
+  @include e(aside__container) {
+    position: fixed;
+    top: 0;
+    padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) + 48px);
+    width: 224px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  /* 隐藏 vp md 内容 */
+  & ~ div {
+    display: none;
+  }
+
+  /* 一级标题样式 */
+  h1 {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  /* 二级标题样式 */
+  h2 {
+    font-size: 27px;
+    line-height: 27px;
+    font-weight: 600;
+  }
+
+  /* 三级标题样式 */
+  h3 {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+}
+
+@include b(aside-outline) {
+  display: none;
+
+  &.has-outline {
+    display: block;
+  }
+
+  @include e(content) {
+    position: relative;
+    border-left: 1px solid var(--vp-c-divider);
+    padding-left: 16px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  @include m(marker) {
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    z-index: 0;
+    opacity: 0;
+    width: 2px;
+    border-radius: 2px;
+    height: 18px;
+    background-color: var(--vp-c-brand-1);
+    transition:
+      top 0.25s cubic-bezier(0, 1, 0.5, 1),
+      background-color 0.5s,
+      opacity 0.25s;
+  }
+
+  @include m(title) {
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+@include b(aside-outline-item) {
+  @include when(root) {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include when(nested) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include m(link) {
+    display: block;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--vp-c-text-2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s;
+
+    &:hover {
+      font-weight: 700;
+    }
+    &.active {
+      color: getCssVar("theme-color");
+    }
+  }
+}

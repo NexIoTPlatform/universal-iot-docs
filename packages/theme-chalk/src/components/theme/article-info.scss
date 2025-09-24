@@ -1,0 +1,42 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(article-info) {
+  font-size: getCssVar("home-font-size-sm");
+  color: getCssVar("text-color-regular");
+
+  &.article > span:not(:last-child) {
+    margin-right: 14px;
+  }
+
+  @include e(item) {
+    &:not(.split):not(:last-child) {
+      margin-right: 16px;
+    }
+    @include e(icon) {
+      vertical-align: -1px;
+      margin-right: 3px;
+    }
+  }
+
+  .split:not(:last-child) {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.8px;
+      height: 8px;
+      margin: 0 10px;
+      background-color: getCssVar("text-color-regular");
+    }
+  }
+
+  .or:not(:last-child) {
+    &::after {
+      content: "/";
+      display: inline-block;
+      width: 5.6px;
+      height: 0;
+      background-color: getCssVar("text-color-regular");
+    }
+  }
+}

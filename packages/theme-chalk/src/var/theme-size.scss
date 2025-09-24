@@ -1,0 +1,101 @@
+@use "../mixins/mixins" as *;
+@use "../mixins/function" as *;
+@use "../mixins/config" as *;
+
+html[#{$namespace}-theme-size="wide"] {
+  @include set-css-var("home-max-width", 1420px);
+  @include set-css-var("home-gap", getCssVar("gap3"));
+  @include set-css-var("home-post-simple-img-width", 160px);
+  @include set-css-var("home-post-full-img-width", 480px);
+  @include set-css-var("home-post-full-img-height", 100%);
+  @include set-css-var("home-post-line-clamp", 4);
+  @include set-css-var("home-card-padding", 15px);
+  @include set-css-var("home-card-width", 350px);
+  @include set-css-var("home-card-svg-margin-left", 10px);
+  @include set-css-var("home-font-size-large", 19px);
+  @include set-css-var("home-font-size-base", 17px);
+  @include set-css-var("home-font-size-middle", 15px);
+  @include set-css-var("home-font-size-sm", 14px);
+  @include set-css-var("home-font-size-small", 13px);
+  @include set-css-var("home-page-width", 1100px);
+  @include set-css-var("home-footer-group-width", 100%);
+}
+
+html[#{$namespace}-theme-size="large"] {
+  @include set-css-var("home-max-width", 1330px);
+  @include set-css-var("home-gap", getCssVar("gap3"));
+  @include set-css-var("home-post-simple-img-width", 160px);
+  @include set-css-var("home-post-full-img-width", 420px);
+  @include set-css-var("home-post-full-img-height", 100%);
+  @include set-css-var("home-post-line-clamp", 4);
+  @include set-css-var("home-card-padding", 15px);
+  @include set-css-var("home-card-width", 350px);
+  @include set-css-var("home-card-svg-margin-left", 10px);
+  @include set-css-var("home-font-size-large", 19px);
+  @include set-css-var("home-font-size-base", 17px);
+  @include set-css-var("home-font-size-middle", 15px);
+  @include set-css-var("home-font-size-sm", 14px);
+  @include set-css-var("home-font-size-small", 13px);
+  @include set-css-var("home-page-width", 1000px);
+  @include set-css-var("home-footer-group-width", 90%);
+}
+
+:root,
+html[#{$namespace}-theme-size="default"] {
+  @include set-css-var("home-max-width", 1140px);
+  @include set-css-var("home-gap", getCssVar("gap2"));
+  @include set-css-var("home-post-simple-img-width", 120px);
+  @include set-css-var("home-post-simple-img-height", 80px);
+  @include set-css-var("home-post-full-img-width", 360px);
+  @include set-css-var("home-post-full-img-height", 100%);
+  @include set-css-var("home-post-line-clamp", 3);
+  @include set-css-var("home-card-padding", 10px);
+  @include set-css-var("home-card-width", 280px);
+  @include set-css-var("home-card-svg-margin-left", 5px);
+  @include set-css-var("home-card-border-radius", 4px);
+  @include set-css-var("home-font-size-large", 18px);
+  @include set-css-var("home-font-size-base", 16px);
+  @include set-css-var("home-font-size-middle", 14px);
+  @include set-css-var("home-font-size-sm", 13px);
+  @include set-css-var("home-font-size-small", 12px);
+  @include set-css-var("page-width", 900px);
+  @include set-css-var("home-footer-group-width", 80%);
+}
+
+html[#{$namespace}-theme-size="small"] {
+  @include set-css-var("home-max-width", 1000px);
+  @include set-css-var("home-gap", getCssVar("gap2"));
+  @include set-css-var("home-post-simple-img-width", 100px);
+  @include set-css-var("home-post-simple-img-height", 80px);
+  @include set-css-var("home-post-full-img-width", 240px);
+  @include set-css-var("home-post-full-img-height", 100%);
+  @include set-css-var("home-post-line-clamp", 2);
+  @include set-css-var("home-card-padding", 8px);
+  @include set-css-var("home-card-width", 260px);
+  @include set-css-var("home-card-svg-margin-left", 4px);
+  @include set-css-var("home-font-size-large", 17px);
+  @include set-css-var("home-font-size-base", 15px);
+  @include set-css-var("home-font-size-middle", 13px);
+  @include set-css-var("home-font-size-sm", 13px);
+  @include set-css-var("home-font-size-small", 12px);
+  @include set-css-var("page-width", 800px);
+  @include set-css-var("home-footer-group-width", 70%);
+}
+
+@media (min-width: 768px) {
+  :root,
+  html[#{$namespace}-theme-size="large"],
+  html[#{$namespace}-theme-size="default"],
+  html[#{$namespace}-theme-size="small"] {
+    @include set-css-var("home-card-width", 280px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root,
+  html[#{$namespace}-theme-size="large"],
+  html[#{$namespace}-theme-size="default"],
+  html[#{$namespace}-theme-size="small"] {
+    @include set-css-var("home-card-width", 100%);
+  }
+}

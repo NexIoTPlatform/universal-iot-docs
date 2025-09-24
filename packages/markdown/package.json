@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "@teek/markdown",
+  "license": "MIT",
+  "main": "index.ts",
+  "dependencies": {
+    "js-yaml": "catalog:",
+    "markdown-it-container": "catalog:"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "catalog:",
+    "@types/markdown-it": "catalog:",
+    "@types/markdown-it-container": "catalog:",
+    "vitepress": "catalog:"
+  }
+}

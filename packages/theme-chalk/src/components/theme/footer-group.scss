@@ -1,0 +1,53 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+
+@include b(footer-group) {
+  width: 100%;
+  max-width: getCssVar("home-footer-group-width");
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin: 20px auto;
+  padding-bottom: 20px;
+  gap: 20px 16px;
+
+  > div {
+    padding-left: calc(100% / 4);
+  }
+
+  @include e(title) {
+    display: inline-flex;
+    margin-bottom: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 0.9;
+  }
+
+  @include e(link) {
+    font-size: 14px;
+    color: var(--vp-c-text-1);
+
+    a {
+      max-width: 120px;
+      width: max-content;
+      display: inline-flex;
+      align-items: center;
+      transition:
+        color 0.25s cubic-bezier(0.25, 0.1, 0.25, 1),
+        background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+      padding: 8px 8px 8px 0;
+      border-radius: 12px;
+
+      &:hover {
+        background-color: getCssVar("fill-color-light");
+      }
+    }
+  }
+
+  @include e(link__external-icon) {
+    margin-left: 4px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

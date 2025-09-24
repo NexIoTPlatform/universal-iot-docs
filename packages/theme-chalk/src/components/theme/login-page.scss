@@ -1,0 +1,205 @@
+@use "../../mixins/bem" as *;
+@use "../../mixins/function" as *;
+@use "../../mixins/mixins" as *;
+
+:root {
+  @include set-css-var("login-bg-color", #eeeeee);
+  @include set-css-var("login-mask-bg-color", #fffc);
+  @include set-css-var(
+    "login-bg-img",
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' baseProfile='full' width='100%25' height='100%25' viewBox='0 0 1400 800'%3E%3Crect x='1300' y='400' rx='40' ry='40' width='150' height='150' stroke='rgb(129, 201, 149)' fill='rgb(129, 201, 149)'%3E%3CanimateTransform attributeType='XML' attributeName='transform' begin='0s' dur='35s' type='rotate' from='0 1450 550' to='360 1450 550' repeatCount='indefinite'/%3E%3C/rect%3E%3Cpath d='M 100 350 A 150 150 0 1 1 400 350 Q400 370 380 370 L 250 370 L 120 370 Q100 370 100 350' fill='%23a2b3ff'%3E%3CanimateMotion path='M 800 -200 L 800 -300 L 800 -200' dur='20s' begin='0s' repeatCount='indefinite'/%3E%3CanimateTransform attributeType='XML' attributeName='transform' begin='0s' dur='30s' type='rotate' values='0 210 530 ; -30 210 530 ; 0 210 530' keyTimes='0 ; 0.5 ; 1' repeatCount='indefinite'/%3E%3C/path%3E%3Ccircle cx='150' cy='150' r='180' stroke='%2385FFBD' fill='%2385FFBD'%3E%3CanimateMotion path='M 0 0 L 40 20 Z' dur='5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C!-- 三角形 --%3E%3Cpath d='M 165 580 L 270 580 Q275 578 270 570 L 223 483 Q220 480 217 483 L 165 570 Q160 578 165 580' fill='%23a2b3ff'%3E%3CanimateTransform attributeType='XML' attributeName='transform' begin='0s' dur='35s' type='rotate' from='0 210 530' to='360 210 530' repeatCount='indefinite'/%3E%3C/path%3E%3C!-- %3Ccircle cx='1200' cy='600' r='30' stroke='rgb(241, 243, 244)' fill='rgb(241, 243, 244)'%3E--%3E%3C!-- %3CanimateMotion path='M 0 0 L -20 40 Z' dur='9s' repeatCount='indefinite'/%3E--%3E%3C!-- %3C/circle%3E--%3E%3Cpath d='M 100 350 A 40 40 0 1 1 180 350 L 180 430 A 40 40 0 1 1 100 430 Z' fill='%233054EB'%3E%3CanimateMotion path='M 140 390 L 180 360 L 140 390' dur='20s' begin='0s' repeatCount='indefinite'/%3E%3CanimateTransform attributeType='XML' attributeName='transform' begin='0s' dur='30s' type='rotate' values='0 140 390; -60 140 390; 0 140 390' keyTimes='0 ; 0.5 ; 1' repeatCount='indefinite'/%3E%3C/path%3E%3Crect x='400' y='600' rx='40' ry='40' width='100' height='100' stroke='rgb(129, 201, 149)' fill='%233054EB'%3E%3CanimateTransform attributeType='XML' attributeName='transform' begin='0s' dur='35s' type='rotate' from='-30 550 750' to='330 550 750' repeatCount='indefinite'/%3E%3C/rect%3E%3C/svg%3E")
+  );
+}
+
+:root.dark {
+  @include set-css-var("login-bg-color", #191919);
+  @include set-css-var("login-mask-bg-color", #000c);
+}
+
+@include b(login) {
+  position: relative;
+  min-height: 550px;
+  height: 100vh;
+  background-color: getCssVar("login-bg-color");
+  background-image: getCssVar("login-bg-img");
+  background-size: cover;
+  padding: 30px;
+
+  @include e(wrapper) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: getCssVar("login-mask-bg-color");
+    border-radius: 10px;
+    height: 100%;
+    padding: 0 50px;
+    width: 100%;
+
+    @media (max-width: 640px) {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  @include e(left) {
+    width: 900px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include e(right) {
+    background-color: getCssVar("bg-color");
+    border-radius: 10px;
+    box-shadow: getCssVar("card-shadow");
+    padding: 50px 40px 45px;
+    min-width: 450px;
+    overflow: hidden;
+    .cursor-pointer {
+      width: 30%;
+    }
+
+    @media (max-width: 640px) {
+      min-width: 100%;
+    }
+  }
+
+  @include e(right__header) {
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    img {
+      width: 60px;
+    }
+
+    .title {
+      color: var(--vp-c-text-1);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      white-space: wrap;
+
+      @media (max-width: 640px) {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+  }
+
+  @include e(right__form) {
+    padding: 1px 15px;
+    border: 1px solid var(--vp-c-divider);
+    transition: border 0.2s ease;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: border-color 0.3s;
+
+    /* for 屏幕阅读器 */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    &:hover {
+      border-color: var(--vp-c-border);
+    }
+
+    .tk-icon {
+      color: var(--vp-c-text-3);
+      pointer-events: none;
+      margin-right: 8px;
+    }
+
+    @include when(focus) {
+      border-color: getCssVar("theme-color");
+    }
+
+    @include when(error) {
+      border-color: var(--vp-c-danger-1);
+      input::placeholder,
+      .tk-icon {
+        color: var(--vp-c-danger-1);
+      }
+    }
+
+    @include m(control) {
+      height: 36px;
+      width: 100%;
+      outline: none;
+    }
+  }
+
+  @include e(right__form__btn) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+
+    @media (max-width: 640px) {
+      justify-content: center;
+    }
+
+    button {
+      width: 185px;
+      height: 40px;
+      padding: 12px 19px;
+      border-radius: 20px;
+      font-size: 14px;
+      border: 1px solid var(--vp-c-divider);
+
+      @media (max-width: 640px) {
+        width: 100%;
+      }
+
+      .tk-icon {
+        pointer-events: none;
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: getCssVar("fill-color-light");
+      }
+
+      &.primary {
+        background-color: getCssVar("theme-color");
+        color: var(--vp-c-white);
+        border: none;
+
+        .tk-icon {
+          color: var(--vp-c-white);
+        }
+
+        &:hover {
+          background-color: var(--vp-c-brand-3);
+        }
+      }
+    }
+  }
+
+  & ~ div {
+    display: none;
+  }
+}
+
+/* 兼容有导航栏的登录页面 */
+.VPContent {
+  @include b(login) {
+    height: calc(100vh - var(--vp-nav-height));
+  }
+}
