@@ -246,11 +246,12 @@ export default defineConfig({
     ],
     socialLinks: [
       {
-       icon: "github", link: "https://github.com/NexIoTPlatform/Universal-IoT-Java" 
-      },
-      {
         icon: "gitee", link: "https://gitee.com/NexIoT/Universal-IoT-Java" 
-       }
+       },
+      {
+       icon: "github", link: "https://github.com/NexIoTPlatform/Universal-IoT-Java" 
+      }
+   
       ],
     search: {
       provider: "local",

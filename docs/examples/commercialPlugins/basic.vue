@@ -247,11 +247,11 @@ const licenses = ref([
 
 <style scoped>
 .commercial-plugins {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
 }
 
 .plugin-category {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .plugin-category h2 {
@@ -265,9 +265,10 @@ const licenses = ref([
 
 .plugin-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  /* 更紧凑的间距，自动填满屏幕 */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .plugin-card {
@@ -475,6 +476,7 @@ const licenses = ref([
 @media (max-width: 768px) {
   .plugin-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
   
   .plugin-header {
