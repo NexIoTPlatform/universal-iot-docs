@@ -59,6 +59,25 @@ const plugins = ref([
     scenarios: ['视频监控看板', '设备联动视频', '售后远程查看'],
     badge: '增值服务',
     badgeColor: 'warning'
+  },
+  {
+    id: 'custom-protocol',
+    title: '定制需求接入',
+    icon: '⚙️',
+    price: '按工作量评估',
+    category: '协议接入',
+    description: '根据您的具体业务需求，定制开发专属协议接入方案，满足特殊场景的设备连接需求',
+    features: [
+      '专属协议开发',
+      '定制化数据解析',
+      '特殊设备适配',
+      '个性化功能实现',
+      '专业技术支持',
+      '源码交付'
+    ],
+    scenarios: ['特殊工业设备', '私有协议接入', '定制化解决方案', '企业专属需求'],
+    badge: '定制',
+    badgeColor: 'info'
   }
   
 ]);
@@ -108,8 +127,23 @@ const licenses = ref([
     badgeColor: 'success'
   },
   {
+    id: 'license-out-of-box',
+    title: '开箱版',
+    icon: '📦',
+    price: '¥2,999/年',
+    description: '不用折腾，直接可用。你提供服务器，我们帮忙部署和维护，开箱即用。',
+    features: [
+      '数据在自己手上',
+      '专业部署与维护',
+      '开箱即用，零配置',
+      '如需源码管理可升级企业版'
+    ],
+    badge: '省心',
+    badgeColor: 'info'
+  },
+  {
     id: 'license-enterprise',
-    title: '企业授权',
+    title: '企业版',
     icon: '🏢',
     price: '¥9,999/永久',
     description: '1年商业代码仓库更新，包含平台所有功能，适合中小团队与企业项目交付。',
