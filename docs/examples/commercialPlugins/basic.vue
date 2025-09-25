@@ -5,24 +5,21 @@ import { ref, computed } from "vue";
 // 插件数据
 const plugins = ref([
   {
-    id: 'tcp-direct',
-    title: 'TCP直连接入',
-    icon: '🔌',
-    price: '¥6,999元/永久',
+    id: 'imoulife',
+    title: '乐橙/ImouLife',
+    icon: '🎥',
+    price: '799元/永久',
     category: '协议接入',
-    description: '支持自定义协议、Modbus等TCP通信方式，支持SNI TLS通配符域名接入、TCP集群、无限扩展节点',
+    description: '对接乐橙/ImouLife平台，支持设备直播、点播、云台控制与回放等常见能力',
     features: [
-      '自定义协议支持',
-      'Modbus TCP通信',
-      'SNI TLS通配符域名',
-      'TCP集群部署',
-      '无限扩展节点',
-      '高性能并发处理',
-      '赠送小程序的能力'
+      '设备预览',
+      '云台控制(PTZ)',
+      '云存储回放',
+      '推流/拉流URL生成',
     ],
-    scenarios: ['工业设备接入', '传感器网络', '大规模TCP设备管理'],
-    badge: '企业必备',
-    badgeColor: 'success'
+    scenarios: ['视频监控看板', '设备联动视频', '售后远程查看'],
+    badge: '增值服务',
+    badgeColor: 'warning'
   },
   {
     id: 'ctaiot-access',
@@ -44,21 +41,24 @@ const plugins = ref([
     badgeColor: 'primary'
   },
   {
-    id: 'imoulife',
-    title: '乐橙/ImouLife',
-    icon: '🎥',
-    price: '799元/永久',
+    id: 'tcp-direct',
+    title: 'TCP直连接入',
+    icon: '🔌',
+    price: '¥6,999元/永久',
     category: '协议接入',
-    description: '对接乐橙/ImouLife平台，支持设备直播、点播、云台控制与回放等常见能力',
+    description: '支持自定义协议、Modbus等TCP通信方式，支持SNI TLS通配符域名接入、TCP集群、无限扩展节点',
     features: [
-      '设备预览',
-      '云台控制(PTZ)',
-      '云存储回放',
-      '推流/拉流URL生成',
+      '自定义协议支持',
+      'Modbus TCP通信',
+      'SNI TLS通配符域名',
+      'TCP集群部署',
+      '无限扩展节点',
+      '高性能并发处理',
+      '赠送小程序的能力'
     ],
-    scenarios: ['视频监控看板', '设备联动视频', '售后远程查看'],
-    badge: '增值服务',
-    badgeColor: 'warning'
+    scenarios: ['工业设备接入', '传感器网络', '大规模TCP设备管理'],
+    badge: '企业必备',
+    badgeColor: 'success'
   },
   {
     id: 'custom-protocol',
@@ -131,7 +131,7 @@ const licenses = ref([
     title: '开箱版',
     icon: '📦',
     price: '¥2,999/年',
-    description: '不用折腾，直接可用。你提供服务器，我们帮忙部署和维护，开箱即用。',
+    description: '限时特价，不用折腾，直接可用。你提供服务器，我们帮忙部署和维护，开箱即用。',
     features: [
       '数据在自己手上',
       '专业部署与维护',
