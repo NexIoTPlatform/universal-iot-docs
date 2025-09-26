@@ -25,7 +25,7 @@ const footerData = computed(() => {
   // 1.主题版权
   if (theme.show !== false) {
     data.push({
-      name: "Theme By Teek",
+      name: "400-186-5001",
       icon: themeIcon,
       link: "https://github.com/Kele-Bingtang/vitepress-theme-teek",
       // 可覆盖上面的配置项
