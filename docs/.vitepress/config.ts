@@ -48,14 +48,14 @@ const teekConfig = defineTeekConfig({
   },
   markdown: {
     demo: {
-      githubUrl: "https://github.com/Kele-Bingtang/vitepress-theme-teek/blob/master/docs",
+      githubUrl: "https://nexiotplatform.github.io/universal-iot-docs/",
     },
   },
   siteAnalytics: [
     {
       provider: "baidu",
       options: {
-        id: "d5ee872d9aa1ef8021f4a3921b2e9c2a",
+        id: "739869837cf16cb1c38dfdccea3ad1b9",
       },
     },
     {
