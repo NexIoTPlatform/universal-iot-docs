@@ -113,6 +113,7 @@ features:
 
 <div style="display: flex;">
     <img src="/wx.png" style="width: 180px; margin-right: 10px;">
+    <img src="/swwx.png" style="width: 180px;">
     <img src="/qq.png" style="width: 180px;">
 </div>
 
