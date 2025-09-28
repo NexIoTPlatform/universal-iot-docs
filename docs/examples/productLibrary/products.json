@@ -37,7 +37,7 @@
       "images": [
         "/universal-iot-docs/product/dianbiao.png"
       ],
-      "communicationProtocols": ["RS485", "LoRa", "NB-IoT"],
+      "communicationProtocols": ["4G", "Cat.1", "NB-IoT"],
       "applicationScenarios": ["智能建筑", "工业园区", "商业楼宇", "住宅小区"],
       "overview": "这是一款高精度智能电表，采用先进的计量芯片和通信技术，支持多种通信协议，适用于各种用电场景的精确计量和远程监控。",
       "features": [
@@ -52,7 +52,7 @@
         "额定电压": "220V AC",
         "额定电流": "5(60)A",
         "精度等级": "1级",
-        "通信接口": "RS485/LoRa/NB-IoT",
+        "通信接口": "4G/Cat.1/NB-IoT",
         "工作温度": "-40°C ~ +70°C",
         "存储温度": "-40°C ~ +85°C",
         "相对湿度": "≤95%",
