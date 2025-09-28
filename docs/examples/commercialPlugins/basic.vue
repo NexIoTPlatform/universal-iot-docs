@@ -117,7 +117,8 @@ const licenses = ref([
     title: '商用授权',
     icon: '🧾',
     price: '¥定价中',
-    description: '永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。',
+    description:
+      "永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含乐橙/ImouLife、天翼物联接入和TCP直连接入。",
     features: [
       '永久授权，不限节点',
       '包含开源版全部功能',
@@ -146,7 +147,8 @@ const licenses = ref([
     title: '企业版',
     icon: '🏢',
     price: '¥定价中',
-    description: '1年商业代码仓库更新，包含平台所有功能和下方接入模块，适合中小团队与企业项目交付。',
+    description:
+      "1年商业代码仓库更新，包含平台所有功能和所有协议接入模块（乐橙/ImouLife、天翼物联接入、TCP直连接入等），适合中小团队与企业项目交付。",
     features: [
       '1年商业仓库更新（含优化 & Bug 修复）',
       '包含平台所有功能',
@@ -178,7 +180,7 @@ const licenses = ref([
   <div class="commercial-plugins">
   <!-- 授权版本模块（放到最前面） -->
   <div class="plugin-category">
-      <h2>📦 授权版本</h2>
+      <h2>📦 商业授权版本</h2>
       <div class="plugin-grid">
         <TkPageCard
           v-for="item in licenses"
@@ -214,7 +216,10 @@ const licenses = ref([
     </div>
     <!-- 协议接入模块 -->
     <div class="plugin-category">
-      <h2>🔌 协议接入模块</h2>
+      <h2>🔌 协议接入模块（单独购买）</h2>
+      <div class="module-description">
+        <p>以下模块可单独购买，适合已购买商业授权但需要特定接入能力的用户。企业版已包含所有模块。</p>
+      </div>
       <div class="plugin-grid">
         <TkPageCard 
           v-for="plugin in pluginsByCategory['协议接入']" 
@@ -295,6 +300,21 @@ const licenses = ref([
   color: var(--vp-c-text-1);
   border-bottom: 2px solid var(--vp-c-brand);
   padding-bottom: 0.5rem;
+}
+
+.module-description {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border-left: 4px solid var(--vp-c-brand);
+}
+
+.module-description p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .plugin-grid {
