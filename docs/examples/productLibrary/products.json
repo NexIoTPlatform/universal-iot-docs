@@ -1,0 +1,90 @@
+{
+  "categories": [
+    {
+      "id": "energy-meter",
+      "name": "能源计量",
+      "icon": "⚡",
+      "description": "电表、水表、燃气表等能源计量设备"
+    },
+    {
+      "id": "environmental",
+      "name": "环境监测",
+      "icon": "🌡️",
+      "description": "温湿度、空气质量、水质监测等环境传感器"
+    },
+    {
+      "id": "security",
+      "name": "安防监控",
+      "icon": "🔒",
+      "description": "摄像头、门禁、报警器等安防设备"
+    },
+    {
+      "id": "industrial",
+      "name": "工业控制",
+      "icon": "🏭",
+      "description": "PLC、传感器、执行器等工业自动化设备"
+    }
+  ],
+  "products": [
+    {
+      "id": "smart-meter-001",
+      "name": "智能电表",
+      "model": "SM-485-001",
+      "category": "energy-meter",
+      "price": "¥299",
+      "originalPrice": "¥399",
+      "mainImage": "/universal-iot-docs//product/dianbiao.png",
+      "images": [
+        "/universal-iot-docs//product/dianbiao.png"
+      ],
+      "communicationProtocols": ["RS485", "LoRa", "NB-IoT"],
+      "applicationScenarios": ["智能建筑", "工业园区", "商业楼宇", "住宅小区"],
+      "overview": "这是一款高精度智能电表，采用先进的计量芯片和通信技术，支持多种通信协议，适用于各种用电场景的精确计量和远程监控。",
+      "features": [
+        "高精度计量，误差小于0.5%",
+        "4G不限距离通信",
+        "实时电压、电流、功率监测",
+        "支持远程抄表和参数设置",
+        "防窃电设计，安全可靠",
+        "宽温度范围工作(-40°C~+70°C)"
+      ],
+      "technicalSpecs": {
+        "额定电压": "220V AC",
+        "额定电流": "5(60)A",
+        "精度等级": "1级",
+        "通信接口": "RS485/LoRa/NB-IoT",
+        "工作温度": "-40°C ~ +70°C",
+        "存储温度": "-40°C ~ +85°C",
+        "相对湿度": "≤95%",
+        "防护等级": "IP54",
+        "功耗": "<2W",
+        "尺寸": "110×75×65mm",
+        "重量": "≤0.5kg"
+      },
+      "applications": [
+        {
+          "scenario": "智能建筑",
+          "description": "适用于办公楼、商场等智能建筑的电能计量和能耗管理"
+        },
+        {
+          "scenario": "工业园区",
+          "description": "满足工业园区多用户、大容量的电能计量需求"
+        },
+        {
+          "scenario": "商业楼宇",
+          "description": "为商业楼宇提供精确的电能计量和分户计费功能"
+        },
+        {
+          "scenario": "住宅小区",
+          "description": "适用于住宅小区的电能计量和远程抄表管理"
+        }
+      ],
+      "badge": "热销",
+      "badgeColor": "success",
+      "stock": 50,
+      "isNew": true,
+      "rating": 4.8,
+      "reviews": 128
+    }
+  ]
+}
