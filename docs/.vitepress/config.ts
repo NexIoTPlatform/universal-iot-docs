@@ -212,11 +212,6 @@ export default defineConfig({
             link: "/06.案例分享/01.成功案例/01.企业级部署",
             activeMatch: "/06.案例分享/"
           },
-          { 
-            text: "帮助支持", 
-            link: "/07.帮助支持/01.常见问题/01.安装部署问题",
-            activeMatch: "/07.帮助支持/"
-          }
         ]
       },
       {
