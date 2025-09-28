@@ -28,14 +28,14 @@
   "products": [
     {
       "id": "smart-meter-001",
-      "name": "智能电表",
+      "name": "DLT/645智能电表",
       "model": "SM-485-001",
       "category": "energy-meter",
       "price": "¥299",
       "originalPrice": "¥399",
-      "mainImage": "/universal-iot-docs//product/dianbiao.png",
+      "mainImage": "/universal-iot-docs/product/dianbiao.png",
       "images": [
-        "/universal-iot-docs//product/dianbiao.png"
+        "/universal-iot-docs/product/dianbiao.png"
       ],
       "communicationProtocols": ["RS485", "LoRa", "NB-IoT"],
       "applicationScenarios": ["智能建筑", "工业园区", "商业楼宇", "住宅小区"],
