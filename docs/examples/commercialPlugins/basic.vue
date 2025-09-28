@@ -124,7 +124,7 @@ const licenses = ref([
       '包含开源版全部功能',
       '允许商业使用与二次开发'
     ],
-    badge: '推荐',
+    badge: '限前20名',
     badgeColor: 'success'
   },
   {
