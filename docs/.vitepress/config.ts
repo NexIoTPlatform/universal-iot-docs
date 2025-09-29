@@ -235,16 +235,15 @@ export default defineConfig({
         activeMatch: "/08.版本对比/",
         items: [
           { text: "功能对比", link: "/versions/comparison" },
-          { text: "商业授权", link: "/versions/plugins" }
-          { text: "授权说明", link: "/versions/license-terms" },
-
+          { text: "商业授权", link: "/versions/plugins" },
+          { text: "授权说明", link: "/versions/license-terms" }
         ]
       },
       {
         text: "产品库",
         activeMatch: "/examples/productLibrary/",
         items: [
-          { text: "已对接", link: "/examples/productLibrary/" },
+          { text: "完成对接", link: "/examples/productLibrary/" },
         ]
       },
     ],
