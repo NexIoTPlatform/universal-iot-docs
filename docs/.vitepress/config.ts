@@ -236,6 +236,8 @@ export default defineConfig({
         items: [
           { text: "功能对比", link: "/versions/comparison" },
           { text: "商业授权", link: "/versions/plugins" }
+          { text: "授权说明", link: "/versions/license-terms" },
+
         ]
       },
       {

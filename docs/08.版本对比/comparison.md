@@ -1,6 +1,6 @@
 ---
 title: 功能对比
-date: 2025-01-27 10:00:00
+date: 2025-09-19 10:00:00
 permalink: /versions/comparison
 categories:
   - 版本对比

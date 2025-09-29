@@ -1,6 +1,6 @@
 ---
 title: 授权说明
-date: 2025-01-27 10:00:00
+date: 2025-09-27 10:00:00
 permalink: /versions/license-terms
 categories:
   - 版本对比
@@ -13,7 +13,6 @@ tags:
 import WxContact from '../examples/wxContact/basic.vue'
 </script>
 
-# 📋 授权说明
 
 ## 🎯 限时特惠价格表（2025年10月30日前）
 
