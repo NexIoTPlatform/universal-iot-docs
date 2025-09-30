@@ -8,9 +8,9 @@ const plugins = ref([
     id: 'imoulife',
     title: '乐橙/ImouLife',
     icon: '🎥',
-    price: '¥定价中',
+    price: '¥1999元',
     category: '协议接入',
-    description: '对接乐橙/ImouLife平台，支持设备直播、点播、云台控制与回放等常见能力',
+    description: '对接乐橙/ImouLife平台，支持设备直播、点播、云台控制与回放等常见能力，轻松实现视频监控能力',
     features: [
       '设备预览',
       '云台控制(PTZ)',
@@ -18,16 +18,16 @@ const plugins = ref([
       '推流/拉流URL生成',
     ],
     scenarios: ['视频监控看板', '设备联动视频', '售后远程查看'],
-    badge: '增值服务',
+    badge: '企业版赠送',
     badgeColor: 'warning'
   },
   {
     id: 'ctaiot-access',
     title: '天翼物联接入',
     icon: '📡',
-    price: '¥定价中',
+    price: '¥2999元',
     category: '协议接入',
-    description: '支持无缝接入天翼AIOT，产品管理、设备管理都统一在nexiot下',
+    description: '支持无缝接入天翼AIOT，产品管理、设备管理都统一在nexiot下，专为电信运营商生态打造',
     features: [
       '无缝天翼AIOT接入',
       '统一产品管理',
@@ -44,9 +44,9 @@ const plugins = ref([
     id: 'tcp-direct',
     title: 'TCP直连接入',
     icon: '🔌',
-    price: '¥定价中',
+    price: '¥4999元',
     category: '协议接入',
-    description: '支持自定义协议、Modbus等TCP通信方式，支持SNI TLS通配符域名接入、TCP集群、无限扩展节点',
+    description: '支持自定义协议、Modbus等TCP通信方式，支持SNI TLS通配符域名接入、TCP集群、无限扩展节点，工业级稳定可靠',
     features: [
       '自定义协议支持',
       'Modbus TCP通信',
@@ -54,11 +54,28 @@ const plugins = ref([
       'TCP集群部署',
       '无限扩展节点',
       '高性能并发处理',
-      '赠送小程序的能力'
+      '赠送UDP直连接入'
     ],
     scenarios: ['工业设备接入', '传感器网络', '大规模TCP设备管理'],
     badge: '企业必备',
     badgeColor: 'success'
+  },
+  {
+    id: 'udp-direct',
+    title: 'UDP直连接入',
+    icon: '📡',
+    price: '¥0元',
+    category: '协议接入',
+    description: 'UDP协议支持，轻量级通信，购买TCP直连接入即可免费获得',
+    features: [
+      'UDP协议支持',
+      '轻量级通信',
+      '低延迟传输',
+      '简单易用'
+    ],
+    scenarios: ['轻量级设备', '实时数据传输', '简单通信需求'],
+    badge: '购买TCP赠送',
+    badgeColor: 'info'
   },
   {
     id: 'custom-protocol',
@@ -66,7 +83,7 @@ const plugins = ref([
     icon: '⚙️',
     price: '按工作量评估',
     category: '协议接入',
-    description: '根据您的具体业务需求，定制开发专属协议接入方案，满足特殊场景的设备连接需求',
+    description: '根据您的具体业务需求，定制开发专属协议接入方案，满足特殊场景的设备连接需求，提供专业的技术支持',
     features: [
       '专属协议开发',
       '定制化数据解析',
@@ -114,63 +131,69 @@ const closeWx = () => (showWx.value = false);
 const licenses = ref([
   {
     id: 'license-standard',
-    title: '商用授权',
+    title: '开源版商业授权',
     icon: '🧾',
-    price: '¥1999元/永久',
+    price: '¥999元/永久',
+    originalPrice: '¥1999元/永久',
     description:
-      "永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含乐橙/ImouLife、天翼物联接入和TCP直连接入。",
+      "前20名特惠价格！永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含协议接入模块（可单独购买）。",
     features: [
       '永久授权，不限节点',
       '包含开源版全部功能',
-      '允许商业使用与二次开发'
+      '允许商业使用与二次开发',
+      '支持无限团队成员'
     ],
-    badge: '限前20名',
+    badge: '前20名特惠',
     badgeColor: 'success'
   },
   {
     id: 'license-out-of-box',
     title: '开箱版',
     icon: '📦',
-    price: '¥定价中',
-    description: '限时特价，不用折腾，直接可用。你提供服务器，我们帮忙部署和维护，开箱即用。',
+    price: '¥2999元/年',
+    description: '你提供服务器，我们帮忙部署和维护，数据在你自己的服务器上，开箱即用无需折腾。',
     features: [
-      '数据在自己手上',
-      '专业部署与维护',
-      '开箱即用，零配置',
-      '如需源码管理可升级企业版'
+      '数据完全掌控在自己服务器',
+      '专业技术团队部署与维护',
+      '开箱即用，零配置工作',
+      '7x24小时技术支持',
+      '包含开源版所有功能'
     ],
-    badge: '省心',
+    badge: '托管服务',
     badgeColor: 'info'
   },
   {
     id: 'license-enterprise',
     title: '企业版',
     icon: '🏢',
-    price: '¥定价中',
+    price: '¥8999元/永久',
     description:
-      "1年商业代码仓库更新，包含平台所有功能和所有协议接入模块（乐橙/ImouLife、天翼物联接入、TCP直连接入等），适合中小团队与企业项目交付。",
+      "包含平台所有功能及小程序版（开发中），1年商业代码仓库更新，适合中小团队与企业项目交付。包含所有协议接入模块。",
     features: [
       '1年商业仓库更新（含优化 & Bug 修复）',
-      '包含平台所有功能',
-      '商业项目优先支持',
-      '包含所有协议接入模块'
+      '包含所有功能模块',
+      '包含小程序版本（开发中）',
+      '包含所有协议接入模块',
+      '商业项目优先技术支持'
     ],
-    badge: '企业',
+    badge: '企业首选',
     badgeColor: 'primary'
   },
   {
     id: 'license-flagship',
     title: '旗舰版',
     icon: '🚀',
-    price: '¥定价中',
-    description: '包含企业授权全部权限，配置独立专人维护与问题修复，适合大型企业与长期运维。',
+    price: '¥？？？？元/永久',
+    description: '包含企业版所有功能，专属售后团队和设备对接指导服务，适合大型企业与长期运维的高端客户。',
     features: [
-      '专属技术支持与问题修复',
-      '项目实施与性能优化建议',
-      '可定制交付方案',
-      "可协助私有化部署"
+      '包含企业版所有功能',
+      '专属技术顾问与服务团队',
+      '定制化设备对接指导',
+      '一对一项目实施与优化建议',
+      '专属技术支持微信群',
+      '可协助私有化部署方案'
     ],
-    badge: '定制',
+    badge: '高端定制',
     badgeColor: 'warning'
   }
 ]);
@@ -197,7 +220,10 @@ const licenses = ref([
           </template>
 
           <div class="plugin-content">
-            <div class="plugin-price">{{ item.price }}</div>
+            <div class="plugin-price">
+              {{ item.price }}
+              <span v-if="item.originalPrice" class="original-price">{{ item.originalPrice }}</span>
+            </div>
             <p class="plugin-description">{{ item.description }}</p>
 
             <div class="plugin-features">
@@ -218,7 +244,7 @@ const licenses = ref([
     <div class="plugin-category">
       <h2>🔌 协议接入模块（单独购买）</h2>
       <div class="module-description">
-        <p>以下模块可单独购买，适合已购买商业授权但需要特定接入能力的用户。企业版已包含所有模块。</p>
+        <p>以下协议接入模块可单独购买，适合已购买开源版商业授权但需要特定接入能力的用户。协议模块定价：天翼物联接入2999元，TCP直连接入4999元，乐橙云接入1999元。企业版已包含所有模块。</p>
       </div>
       <div class="plugin-grid">
         <TkPageCard 
@@ -524,6 +550,15 @@ const licenses = ref([
   color: var(--vp-c-brand);
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* 原价显示样式 */
+.original-price {
+  font-size: 1rem;
+  color: var(--vp-c-text-3);
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+  font-weight: normal;
 }
 
 /* 响应式设计 */
