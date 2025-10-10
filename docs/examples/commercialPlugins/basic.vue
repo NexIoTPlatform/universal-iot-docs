@@ -133,25 +133,25 @@ const licenses = ref([
     id: 'license-standard',
     title: '开源版商业授权',
     icon: '🧾',
-    price: '¥999元/永久',
+    price: '¥2999元/永久',
     originalPrice: '¥1999元/永久',
     description:
-      "前20名特惠价格！永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含协议接入模块（可单独购买）。",
+      "永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含协议接入模块（可单独购买）。",
     features: [
       '永久授权，不限节点',
       '包含开源版全部功能',
       '允许商业使用与二次开发',
       '支持无限团队成员'
     ],
-    badge: '前20名特惠',
+    badge: '全网最低价',
     badgeColor: 'success'
   },
   {
     id: 'license-out-of-box',
     title: '开箱版',
     icon: '📦',
-    price: '¥2999元/年',
-    description: '你提供服务器，我们帮忙部署和维护，数据在你自己的服务器上，开箱即用无需折腾。',
+    price: '¥4999元/年',
+    description: '赠送商业授权，你提供服务器，我们帮忙部署和维护，数据在你自己的服务器上，开箱即用无需折腾。',
     features: [
       '数据完全掌控在自己服务器',
       '专业技术团队部署与维护',
@@ -166,7 +166,7 @@ const licenses = ref([
     id: 'license-enterprise',
     title: '企业版',
     icon: '🏢',
-    price: '¥8999元/永久',
+    price: '¥9999元/永久',
     description:
       "包含平台所有功能及小程序版（开发中），1年商业代码仓库更新，适合中小团队与企业项目交付。包含所有协议接入模块。",
     features: [
@@ -203,7 +203,7 @@ const licenses = ref([
   <div class="commercial-plugins">
   <!-- 授权版本模块（放到最前面） -->
   <div class="plugin-category">
-      <h2>📦 商业授权版本</h2>
+      <h2>📦 商业授权版本(前20名特惠，附送专属特权)</h2>
       <div class="plugin-grid">
         <TkPageCard
           v-for="item in licenses"
