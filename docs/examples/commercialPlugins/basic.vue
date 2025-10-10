@@ -134,7 +134,7 @@ const licenses = ref([
     title: '开源版商业授权',
     icon: '🧾',
     price: '¥2999元/永久',
-    originalPrice: '¥1999元/永久',
+    // originalPrice: '¥3999元/永久',
     description:
       "永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含协议接入模块（可单独购买）。",
     features: [
