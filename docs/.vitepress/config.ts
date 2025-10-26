@@ -229,16 +229,16 @@ export default defineConfig({
           }
         ]
       },
-      {
-        text: "企业授权",
-        // 与"设备接入"一致：activeMatch 指向实际目录
-        activeMatch: "/08.版本对比/",
-        items: [
-          { text: "功能对比", link: "/versions/comparison" },
-          { text: "商业授权", link: "/versions/plugins" },
-          { text: "授权说明", link: "/versions/license-terms" }
-        ]
-      },
+      // {
+      //   text: "企业授权",
+      //   // 与"设备接入"一致：activeMatch 指向实际目录
+      //   activeMatch: "/08.版本对比/",
+      //   items: [
+      //     { text: "功能对比", link: "/versions/comparison" },
+      //     { text: "商业授权", link: "/versions/plugins" },
+      //     { text: "授权说明", link: "/versions/license-terms" }
+      //   ]
+      // },
       {
         text: "产品库",
         activeMatch: "/examples/productLibrary/",
