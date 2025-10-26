@@ -19,13 +19,13 @@ hero:
       text: 设备接入
       link: /iot/connect/say
   image:
-    src: /teek-logo-large.svg
+    src: /nexiot-logo.png
     alt: 奈科斯(NexIoT)
 
 features:
   - icon: 🔌
     title: 零代码侵入多协议接入
-    details: 支持TCP直连、MQTT直连、天翼物联(AIoT)、HTTP REST等多种设备接入方式，无需修改系统代码，大学生就能完成设备对接
+    details: 支持TCP直连、MQTT直连、天翼物联(AIoT)、Modbus、HTTP REST等多种设备接入方式，无需修改系统代码，大学生就能完成设备对接
   - icon: 🛠️
     title: 强大云调试器
     details: 基于浏览器的实时协议开发和调试，直连设备接入半年多没重启过，让协议开发变得简单高效

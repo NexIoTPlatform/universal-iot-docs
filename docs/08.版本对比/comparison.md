@@ -36,6 +36,7 @@ tags:
 | HTTP接入 | 云云对接、OAuth2 标准、Java SDK 无缝接入 | ✅ | ✅ |
 | TCP直连接入 | 自定义协议、Modbus；SNI TLS 通配符；TCP 集群与扩展 | ❌ | ✅ |
 | 天翼物联接入 | 无缝对接天翼 AIOT，统一在 nexiot 管理 | ❌ | ✅ |
+| Modbus | DTU接入 | ✅ | ✅ |
 | 乐橙云/ImouLife | 无技术支持 | ❌ | ✅ |
 | 移动端小程序 | 开发中🔄，开源版只有编译版本 | ✅ | ✅ |
 | WEB-IDE调试器前端源码 | 无技术支持 | ❌ | ✅ |
