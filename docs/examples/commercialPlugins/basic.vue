@@ -8,7 +8,7 @@ const plugins = ref([
     id: 'imoulife',
     title: '乐橙/ImouLife',
     icon: '🎥',
-    price: '¥1999元',
+    price: '¥5999元',
     category: '协议接入',
     description: '对接乐橙/ImouLife平台，支持设备直播、点播、云台控制与回放等常见能力，轻松实现视频监控能力',
     features: [
@@ -25,7 +25,7 @@ const plugins = ref([
     id: 'ctaiot-access',
     title: '天翼物联接入',
     icon: '📡',
-    price: '¥2999元',
+    price: '¥6999元',
     category: '协议接入',
     description: '支持无缝接入天翼AIOT，产品管理、设备管理都统一在nexiot下，专为电信运营商生态打造',
     features: [
@@ -44,7 +44,7 @@ const plugins = ref([
     id: 'tcp-direct',
     title: 'TCP直连接入',
     icon: '🔌',
-    price: '¥4999元',
+    price: '¥8999元',
     category: '协议接入',
     description: '支持自定义协议、Modbus等TCP通信方式，支持SNI TLS通配符域名接入、TCP集群、无限扩展节点，工业级稳定可靠',
     features: [
@@ -67,6 +67,23 @@ const plugins = ref([
     price: '¥0元',
     category: '协议接入',
     description: 'UDP协议支持，轻量级通信，购买TCP直连接入即可免费获得',
+    features: [
+      'UDP协议支持',
+      '轻量级通信',
+      '低延迟传输',
+      '简单易用'
+    ],
+    scenarios: ['轻量级设备', '实时数据传输', '简单通信需求'],
+    badge: '购买TCP赠送',
+    badgeColor: 'info'
+  },
+  {
+    id: 'wvpGB28281',
+    title: 'GB2828国标集成',
+    icon: '📡',
+    price: '¥1999元',
+    category: 'GB28281接入',
+    description: 'GB28281协议支持，轻量级通信，购买企业版可免费获得',
     features: [
       'UDP协议支持',
       '轻量级通信',
@@ -133,7 +150,7 @@ const licenses = ref([
     id: 'license-standard',
     title: '开源版商业授权',
     icon: '🧾',
-    price: '¥2999元/永久',
+    price: '¥6999元/永久',
     // originalPrice: '¥3999元/永久',
     description:
       "永久商用授权，拥有开源版本的全部功能，不限团队成员数量与部署节点。不包含协议接入模块（可单独购买）。",
@@ -150,13 +167,13 @@ const licenses = ref([
     id: 'license-out-of-box',
     title: '开箱版',
     icon: '📦',
-    price: '¥4999元/年',
+    price: '¥9999元/年',
     description: '赠送商业授权，你提供服务器，我们帮忙部署和维护，数据在你自己的服务器上，开箱即用无需折腾。',
     features: [
       '数据完全掌控在自己服务器',
       '专业技术团队部署与维护',
       '开箱即用，零配置工作',
-      '7x24小时技术支持',
+      '5x8小时技术支持',
       '包含开源版所有功能'
     ],
     badge: '托管服务',
@@ -166,14 +183,15 @@ const licenses = ref([
     id: 'license-enterprise',
     title: '企业版',
     icon: '🏢',
-    price: '¥9999元/永久',
+    price: '¥19999元/永久',
     description:
       "包含平台所有功能及小程序版（开发中），1年商业代码仓库更新，适合中小团队与企业项目交付。包含所有协议接入模块。",
     features: [
       '1年商业仓库更新（含优化 & Bug 修复）',
       '包含所有功能模块',
       '包含小程序版本（开发中）',
-      '包含所有协议接入模块',
+      '赠送组态（规划中）',
+      '赠送WVP国标视频（开发中）',
       '商业项目优先技术支持'
     ],
     badge: '企业首选',
@@ -203,7 +221,7 @@ const licenses = ref([
   <div class="commercial-plugins">
   <!-- 授权版本模块（放到最前面） -->
   <div class="plugin-category">
-      <h2>📦 商业授权版本(前20名特惠，附送专属特权)</h2>
+      <h2>📦 商业授权版本(仅剩9名特惠，附送专属特权，组态、WVP国标视频集成)</h2>
       <div class="plugin-grid">
         <TkPageCard
           v-for="item in licenses"
@@ -244,7 +262,7 @@ const licenses = ref([
     <div class="plugin-category">
       <h2>🔌 协议接入模块（单独购买）</h2>
       <div class="module-description">
-        <p>以下协议接入模块可单独购买，适合已购买开源版商业授权但需要特定接入能力的用户。协议模块定价：天翼物联接入2999元，TCP直连接入4999元，乐橙云接入1999元。企业版已包含所有模块。</p>
+        <p>以下协议接入模块可单独购买，适合已购买开源版商业授权但需要特定接入能力的用户。企业版已包含所有模块。</p>
       </div>
       <div class="plugin-grid">
         <TkPageCard 

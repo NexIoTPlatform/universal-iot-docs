@@ -7,7 +7,7 @@ tk:
 hero:
   name: NexIoT
   text: 奈科斯物联网平台
-  tagline: ✨ 基于Java"零代码侵入"的企业级物联网平台，支持多协议直连、云调试、配置化
+  tagline: ✨ 基于Java 21 AI+创新的"真·零代码侵入"企业级物联网平台 | 开箱即用
   actions:
     - theme: alt
       text: 快速开始

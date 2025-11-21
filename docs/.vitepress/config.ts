@@ -8,18 +8,18 @@ import { version } from "../../packages/teek/version";
 // import { version } from "vitepress-theme-teek/es/version";
 
 const description = [
-  "欢迎来到 vitepress-theme-teek 使用文档",
-  "Teek 是一款基于 VitePress 构建的主题，是在默认主题的基础上进行拓展，支持 VitePress 的所有功能、配置",
-  "Teek 拥有三种典型的知识管理形态：结构化、碎片化、体系化，可以轻松构建一个结构化知识库，适用个人博客、文档站、知识库等场景",
+  "欢迎来到 奈科斯（NexIoT） 使用文档",
+  "基于Java 21 AI+创新的 `真·零代码侵入`企业级物联网平台",
+  "| 开箱即用 | 设备驱动完全外置，一键导出即用 | 支持TCP、MQTT、Modbus、天翼物联等多协议接入 | 基于浏览器的调试IDE，热插拔架构，无需重启 | 驱动生态共享，你对接的设备我可直接导入",
 ].toString();
 
 const teekConfig = defineTeekConfig({
-  author: { name: "nexiot", link: "https://github.com/Kele-Bingtang" },
+  author: { name: "nexiot", link: "https://gitee.com/NexIoT/Universal-IoT-Java" },
   blogger: {
-    avatar: "/avator.png",
+    avatar: "/nexiot-logo.png",
     shape: "circle-rotate",
     name: "nexiot",
-    slogan: "兴趣，坚持，热爱，专注",
+    slogan: "开箱即用,企业级物联网平台",
     circleBgImg: "/blog/bg4.webp",
     color: "#ffffff",
   },
