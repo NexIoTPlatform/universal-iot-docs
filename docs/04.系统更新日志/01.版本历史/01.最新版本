@@ -81,7 +81,7 @@ NexIoT v2.1.0 是一个重要的功能更新版本，新增了多项核心功能
 
 ### 系统要求
 - Java 21+
-- MySQL 5.7+ 或 MySQL 8.0+
+- MySQL MySQL 8.0+
 - Redis 6.0+
 - 内存：建议8GB+
 

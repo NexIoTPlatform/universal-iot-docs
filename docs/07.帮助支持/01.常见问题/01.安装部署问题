@@ -26,7 +26,7 @@ tags:
 #### 软件要求
 - **操作系统**: Linux（CentOS 7+、Ubuntu 18+）、Windows 10+
 - **Java**: JDK 21+
-- **数据库**: MySQL 5.7+ 或 MySQL 8.0+
+- **数据库**: MySQL + 或 MySQL 8.0+
 - **缓存**: Redis 6.0+
 - **容器**: Docker 20.0+（可选）
 
