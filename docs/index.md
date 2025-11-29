@@ -9,10 +9,10 @@ hero:
   text: 奈科斯物联网平台
   tagline: ✨ 基于Java 21 AI+创新的"真·零代码侵入"企业级物联网平台 | 开箱即用
   actions:
-    - theme: alt
+    - theme: brand
       text: 快速开始
       link: /quick-start-guide
-    - theme: brand
+    - theme: alt
       text: 平台介绍
       link: /guide/intro
     - theme: alt
@@ -36,6 +36,169 @@ features:
     title: 模块化插件架构
     details: TCP、MQTT、天翼物联等按需开启，模块化设计让对接新平台变得容易，完整的产品管理、设备监控、应用输出功能
 ---
+
+<div class="sponsor-card">
+  <a href="https://www.aeoliancloud.com/cart/goods.htm?id=14" target="_blank" class="sponsor-image-link">
+    <img src="/gg/fly-20250317.png" alt="风铃云服务促销" class="sponsor-image" />
+  </a>
+  <span class="sponsor-icon">💎</span>
+  <span class="sponsor-text">
+    <strong>吉林省风铃云信息科技有限公司</strong> 独家赞助 <strong>NexIoT</strong> 在线演示服务器
+    <span class="sponsor-divider">|</span>
+    <span class="sponsor-services">物理机装机 · AI算力设备出租 · 数据中心托管</span>
+  </span>
+  <a href="https://www.aeoliancloud.com/cart/goods.htm?id=14" target="_blank" class="sponsor-link">
+    了解更多
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</div>
+
+<style>
+.sponsor-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+  flex-wrap: nowrap;
+}
+
+.sponsor-card:hover {
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+}
+
+.sponsor-image-link {
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 0;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-image-link:hover {
+  transform: scale(1.02);
+}
+
+.sponsor-image {
+  height: auto;
+  max-height: 60px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.sponsor-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.sponsor-text {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--vp-c-text-1);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sponsor-text strong {
+  color: var(--vp-c-brand);
+  font-weight: 600;
+}
+
+.sponsor-divider {
+  margin: 0 0.5rem;
+  color: var(--vp-c-divider);
+}
+
+.sponsor-services {
+  color: var(--vp-c-text-2);
+  font-size: 0.8125rem;
+}
+
+.sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sponsor-link:hover {
+  background: var(--vp-c-brand-dark);
+  transform: translateX(2px);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+}
+
+.sponsor-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.sponsor-link:hover svg {
+  transform: translateX(2px);
+}
+
+@media (max-width: 960px) {
+  .sponsor-card {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .sponsor-image {
+    max-height: 50px;
+    max-width: 250px;
+  }
+  
+  .sponsor-text {
+    white-space: normal;
+    flex-basis: 100%;
+  }
+  
+  .sponsor-link {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .sponsor-card {
+    padding: 0.625rem 0.875rem;
+  }
+  
+  .sponsor-image {
+    max-height: 45px;
+    max-width: 200px;
+  }
+  
+  .sponsor-text {
+    font-size: 0.8125rem;
+  }
+  
+  .sponsor-services {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  
+  .sponsor-divider {
+    display: none;
+  }
+}
+</style>
 
 ## 🌟 平台亮点
 
