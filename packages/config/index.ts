@@ -40,8 +40,7 @@ export const defineTeekConfig = (config: TeekConfig & UserConfig<DefaultTheme.Co
     },
     markdown: {
       config: md => {
-        [shareCardPlugin, imgCardPlugin, navCardPlugin, videoPlugin].forEach(plugin => md.use(plugin));
-        // 使用emoji替代todo插件，避免解析问题
+        [shareCardPlugin, imgCardPlugin, navCardPlugin, videoPlugin, todoPlugin].forEach(plugin => md.use(plugin));
 
         const { container = {}, demo, config } = markdown;
         if (!demo?.disabled) md.use(demoPlugin, demo).use(containerPlugin, container.label);

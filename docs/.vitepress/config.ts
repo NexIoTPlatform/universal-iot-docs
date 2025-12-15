@@ -168,11 +168,11 @@ export default defineConfig({
     },
     nav: [
       { text: "首页", link: "/" },
-      {
-        text: "平台介绍",
-        link: "/guide/intro",
-        activeMatch: "/01.平台介绍/",
-      },
+      // {
+      //   text: "平台介绍",
+      //   link: "/guide/intro",
+      //   activeMatch: "/01.平台介绍/",
+      // },
       { 
         text: "设备接入", 
         activeMatch: "/02.设备接入/",
@@ -182,7 +182,7 @@ export default defineConfig({
           { text: "天翼物联接入", link: "/iot/aiot/create-product" },
           { text: "HTTP设备接入", link: "/iot/http/api-specification" },
           { text: "移动OneNET接入", link: "/iot/onenet/overview" },
-          { text: "云云对接接入", link: "/iot/cloud-cloud/overview" },
+          // { text: "云云对接接入", link: "/iot/cloud-cloud/overview" },
         ]
       },
       {
