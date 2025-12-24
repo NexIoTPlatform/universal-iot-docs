@@ -221,7 +221,7 @@ const licenses = ref([
   <div class="commercial-plugins">
   <!-- 授权版本模块（放到最前面） -->
   <div class="plugin-category">
-      <h2>📦 商业授权版本(仅剩9名特惠，附送专属特权，组态、WVP国标视频集成)</h2>
+      <h2>📦 商业授权版本</h2>
       <div class="plugin-grid">
         <TkPageCard
           v-for="item in licenses"
